@@ -1,22 +1,22 @@
 @import "style/base/config";
 @import "style/layout/app-layout-mixin";
 
-.App {
+.app {
   text-align: center;
 }
 
-@include app-layout(App);
+@include app-layout(app);
 
-.App header {
+.app header {
   background-color: $contrast-background-color;
   color: $contrast-font-color;
 }
 
-.App h1 {
+.app h1 {
   font-size: 1.6em;
 }
 
-.App footer {
+.app footer {
   background-color: $contrast-background-color;
   color: $contrast-font-color;
 }

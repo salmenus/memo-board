@@ -4,7 +4,7 @@
 
     min-height: 100vh;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-template-rows: 4em auto 2em;
 
     > * {
