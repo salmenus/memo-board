@@ -1,4 +1,4 @@
-*** Dev Notes - Backend ***
+ï»¿*** Dev Notes - Backend ***
 
 --------------
 BASIC FEATURES
@@ -6,23 +6,23 @@ BASIC FEATURES
 
 - GET ideas/
 	Queries a DB
-	Returns: [{“id”: “:id”, “created_date”: “:created_date”, “title”: “:title”, “body”: “:body”}, {}, …] 
+	Returns: [{â€œidâ€: â€œ:idâ€, â€œcreated_dateâ€: â€œ:created_dateâ€, â€œtitleâ€: â€œ:titleâ€, â€œbodyâ€: â€œ:bodyâ€}, {}, â€¦] 
 
 - GET ideas/new
 	Inserts a new idea into the DB
-	Returns: { “id”: “:id”, “created_date”: “:created_date” }
+	Returns: { â€œidâ€: â€œ:idâ€, â€œcreated_dateâ€: â€œ:created_dateâ€ }
 	Returns: Basic success messages {"success": true} pn HTTP 200
 	On error: Returns generic error message and relevant HTTP code
 
 - POST idea/update
 	Updates existing idea
-	Receives: { “id”: “:id”, “title”: “:title”, “body”: “:body” }
+	Receives: { â€œidâ€: â€œ:idâ€, â€œtitleâ€: â€œ:titleâ€, â€œbodyâ€: â€œ:bodyâ€ }
 	Returns: Basic success messages {"success": true} pn HTTP 200
 	On error: Returns generic error message and relevant HTTP code
 
 POST idea/delete
 	Deletes idea
-	Receives: { “id”: “:id” }
+	Receives: { â€œidâ€: â€œ:idâ€ }
 	Returns: Basic success messages {"success": true} pn HTTP 200
 	On error: Returns generic error message and relevant HTTP code
 

@@ -1,4 +1,4 @@
-*** Dev Notes - UI ***
+﻿*** Dev Notes - UI ***
 
 --------------
 BASIC FEATURES
