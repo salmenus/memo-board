@@ -3,7 +3,19 @@
 // Colors
 $gray-dark: #333333;
 
-// Font
-$base-font-size: 1.8rem !default;
+// Font family and size
+$base-font-size: 1.4rem !default;
 $base-font-family: 'Amatic SC', cursive !default;
+
+// Main colors
+$base-background-color: #fff5d4 !default;
 $base-font-color: $gray-dark !default;
+
+// Contrast colors
+$contrast-background-color: #333333 !default;
+$contrast-font-color: #f0f0f0 !default;
+
+// Padding
+$padding-big: 1em;
+$padding-medium: .75em;
+$padding-small: 0.5em;

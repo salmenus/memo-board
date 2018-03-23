@@ -1,0 +1,28 @@
+@mixin app-layout ($base-class-name) {
+
+  .#{$base-class-name} {
+
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 4em auto 2em;
+
+    header, footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    header {
+      grid-column: 1 / -1;
+    }
+
+    main {
+      grid-column: 1 / -1;
+    }
+
+    footer {
+      grid-column: 1 / -1;
+    }
+  }
+}

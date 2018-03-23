@@ -1,17 +1,22 @@
+@import "style/base/config";
+@import "style/layout/app-layout-mixin";
+
 .App {
   text-align: center;
 }
 
-.App-header {
-  background-color: #222;
-  padding: 20px;
-  color: white;
+@include app-layout(App);
+
+.App header {
+  background-color: $contrast-background-color;
+  color: $contrast-font-color;
 }
 
-.App-title {
-  font-size: 1.5em;
+.App h1 {
+  font-size: 1.6em;
 }
 
-.App-intro {
-  font-size: large;
+.App footer {
+  background-color: $contrast-background-color;
+  color: $contrast-font-color;
 }
