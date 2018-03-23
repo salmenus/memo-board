@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+@import "config";
+
+body {
+  font-size: $base-font-size;
+  font-family: $base-font-family;
+  color: $base-font-color;
+}
