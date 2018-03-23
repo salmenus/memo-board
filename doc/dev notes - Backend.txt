@@ -1,0 +1,36 @@
+*** Dev Notes - Backend ***
+
+--------------
+BASIC FEATURES
+--------------
+
+- GET ideas/
+	Queries a DB
+	Returns: [{“id”: “:id”, “created_date”: “:created_date”, “title”: “:title”, “body”: “:body”}, {}, …] 
+
+- GET ideas/new
+	Inserts a new idea into the DB
+	Returns: { “id”: “:id”, “created_date”: “:created_date” }
+	Returns: Basic success messages {"success": true} pn HTTP 200
+	On error: Returns generic error message and relevant HTTP code
+
+- POST idea/update
+	Updates existing idea
+	Receives: { “id”: “:id”, “title”: “:title”, “body”: “:body” }
+	Returns: Basic success messages {"success": true} pn HTTP 200
+	On error: Returns generic error message and relevant HTTP code
+
+POST idea/delete
+	Deletes idea
+	Receives: { “id”: “:id” }
+	Returns: Basic success messages {"success": true} pn HTTP 200
+	On error: Returns generic error message and relevant HTTP code
+
+--------------
+IMPLEMENTATION
+--------------
+
+- 1 single Express JS route
+- Hosted an on AWS lambda
+- Basic NoSQL DB
+- No need for extensive validation (just generic error message on error)
