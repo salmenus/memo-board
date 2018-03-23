@@ -12,6 +12,9 @@
 # processed css
 /src/**/*.css
 
+# ide config files
+/.idea
+
 # misc
 .DS_Store
 .env.local
