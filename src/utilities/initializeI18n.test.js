@@ -6,4 +6,5 @@ it('calls init function with appropriate config', () => {
   };
 
   initializeI18n({i18n: i18nMock});
+  expect(i18nMock.init.mock.calls.length).toBe(1);
 });
