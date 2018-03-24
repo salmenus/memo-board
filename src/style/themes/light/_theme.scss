@@ -4,19 +4,22 @@
 $gray-dark: #333333;
 
 // Font family and size
-$base-font-size: 1.4rem !default;
-$base-font-family: 'Amatic SC', cursive !default;
+$base-font-size: 1em !default;
+$base-font-family: 'Cabin', sans-serif !default;
 
 // Font sizes
-$font-size-large: 1.6em;
-$font-size-medium: 1.2em;
+$font-size-large: 1.8em;
+$font-size-medium: 1.4em;
 $font-size-normal: 1em;
-$font-size-small: 0.8em;
+$font-size-small: 0.7em;
 
 // Main colors
-$base-background-color: #fff5d4 !default;
+$base-background-color: #ffeead !default;
 $base-font-color: $gray-dark !default;
 
 // Contrast colors
 $contrast-background-color: #333333 !default;
 $contrast-font-color: #f0f0f0 !default;
+
+// Contrast font-family
+$contrast-font-family: 'Amatic SC', cursive !default;

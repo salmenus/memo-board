@@ -7,6 +7,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: start;
+  margin: $memo-title-margin 0;
 
   > * {
     flex: 0 0 $memo-title-height;

@@ -3,8 +3,25 @@ import Memo from './Memo';
 import './Memos.css'
 
 class Memos extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      memos: []
+    };
+
+    import("../data/mock-memos").then(memos => {
+      this.setState({memos:memos.default});
+    })
+  }
+
   render() {
-    const memos = [<Memo key={1}/>, <Memo key={2}/>, <Memo key={3}/>, <Memo key={4}/>, <Memo key={5}/>, <Memo key={6}/>, <Memo key={7}/>];
+
+    const memos = this.state.memos.map((memo) => {
+      return <Memo key={memo.id} data={memo} />;
+    });
+
     return (<div className={'memos'}>{memos}</div>);
   }
 }
