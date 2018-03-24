@@ -48,5 +48,11 @@ export default [
     "id": 10,
     "title": "Better part of the express day",
     "body": "Spend better part of the day setting up es6express-starter boilerplate with @babeljs, expressjs and @MongoDB"
+  },
+  {
+    "id": 11,
+    "isNew": true,
+    "title": "",
+    "body": ""
   }
 ];

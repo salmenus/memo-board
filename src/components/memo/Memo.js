@@ -6,10 +6,11 @@ import MemoBody from "./MemoBody"
 class Memo extends Component {
 
   render() {
+    const memo = this.props.memo;
     return (
-      <div className={'memo'}>
-        <MemoBar memo={this.props.memo} />
-        <MemoBody memo={this.props.memo} />
+      <div className={`memo` + ((memo.isNew) ? ' new-memo' : '')}>
+        <MemoBar memo={memo} />
+        <MemoBody memo={memo} />
       </div>
     );
   }

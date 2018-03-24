@@ -7,7 +7,8 @@ class MemoTitle extends Component {
     super(props);
     this.state = {
       title: props.memo.title,
-      editing: false
+      editing: false,
+      isNewMemo: props.memo.isNew
     };
   }
 
@@ -30,6 +31,12 @@ class MemoTitle extends Component {
   updateTitle(event) {
     if(event && event.target && event.target.value) {
       this.setState({title: event.target.value});
+    }
+  }
+
+  componentDidMount() {
+    if(this.state.isNewMemo) {
+      this.toggleEditingMode();
     }
   }
 
