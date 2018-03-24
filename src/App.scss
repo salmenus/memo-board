@@ -4,3 +4,9 @@
 .app {
   @include app-layout(1fr, 6em auto 3em);
 }
+
+@media all and (max-width: 480px) {
+  .app {
+    grid-template-rows: 10em auto 3em;
+  }
+}
