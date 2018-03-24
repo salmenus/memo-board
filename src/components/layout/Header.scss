@@ -3,14 +3,37 @@
 .header {
 
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
   align-items: center;
 
   background-color: $contrast-background-color;
   font-family: $contrast-font-family;
   color: $contrast-font-color;
 
-  h1 {
+  > .title {
+    width: 60%;
     font-size: $font-size-large;
+    text-align: center;
   }
+
+  > .actions {
+    width: 20%;
+    text-align: right;
+    padding-right: 1rem;
+  }
+}
+
+@media all and (max-width: 480px) {
+
+  .header > .title,
+  .header > .actions {
+    width: 100%;
+  }
+
+  .header > .actions {
+    text-align: center;
+    padding-right: auto;
+  }
+
 }

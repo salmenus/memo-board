@@ -3,14 +3,15 @@
   background-size: 60%;
 }
 
-@mixin flat-button($icon: none) {
+@mixin flat-button($icon: none, $active-background-color: null) {
+
   box-shadow: none;
   border: none;
   border-radius: 0;
   -webkit-appearance: none;
   outline: none;
 
-  opacity: 0.5;
+  opacity: 0.8;
   cursor: pointer;
   font-size: 0;
 
@@ -20,12 +21,16 @@
   @else {
     background: none;
   }
-}
 
-@mixin flat-button-active( $background-color : null ) {
-  outline: none;
-  opacity: 1;
-  @if $background-color != null {
-    background-color: $background-color;
+  &:active,
+  &:focus,
+  &:hover {
+
+    outline: none;
+    opacity: 1;
+
+    @if $active-background-color != null {
+      background-color: $active-background-color;
+    }
   }
 }

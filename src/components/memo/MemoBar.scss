@@ -24,10 +24,5 @@
   flex: 1;
   margin-left: auto;
   align-self: stretch;
-  @include flat-button( icon('delete', $memo-delete-button-color) );
-}
-
-.memo-bar > .delete:hover,
-.memo-bar > .delete:focus {
-  @include flat-button-active( $memo-delete-button-active-background );
+  @include flat-button( icon('delete', $memo-delete-button-color ), $memo-delete-button-active-background );
 }
