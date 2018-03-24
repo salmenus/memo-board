@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import "theme";
 
 // Dimensions
 $memo-tile-width: 150px !default;
@@ -8,6 +9,7 @@ $memo-tile-border-radius: 0 !default;
 
 // Style
 $memo-tile-background-color: #96ceb4 !default;
+$memo-tile-editing-background-color: #ffffff !default;
 
 // Memo delete button
 $memo-delete-button-color: #ff6f69 !default;
@@ -18,4 +20,7 @@ $memo-new-button-color: #ffffff !default;
 $memo-new-button-active-background: #000000 !default;
 
 // Body style
-$memo-body-max-lines: 5;
+$memo-body-max-lines: 5 !default;
+
+// Forms
+$memo-input-color: $gray-light !default;

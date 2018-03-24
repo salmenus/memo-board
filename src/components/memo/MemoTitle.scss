@@ -1,0 +1,34 @@
+@import "../../style/base/config";
+@import "../../style/layout/flat-input";
+
+.memo-title {
+  display: flex;
+  overflow: hidden;
+  cursor: pointer;
+  align-items: center;
+  padding: 0 5px;
+}
+
+.memo-title.editing {
+  background-color: $memo-tile-editing-background-color;
+  cursor: text;
+}
+
+.memo-title:hover {
+  color: $memo-input-color;
+}
+
+.memo-title-text {
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.memo-title-input {
+  @include flat-input;
+  text-align: center;
+  width: 100%;
+  color: $memo-input-color;
+}

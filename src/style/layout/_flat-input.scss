@@ -1,0 +1,9 @@
+@mixin flat-input {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  -webkit-appearance: none;
+  outline: none;
+}

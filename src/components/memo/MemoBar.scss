@@ -5,19 +5,16 @@
 .memo-bar {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
+  align-content: center;
 
   height: 20%;
   background-color: $transparent-light;
 }
 
-.memo-bar > .title {
+.memo-bar > .memo-title,
+.memo-bar > .memo-title-input {
   flex: 10;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  padding: 0 5px;
-  text-align: center;
 }
 
 .memo-bar > .delete {
