@@ -4,7 +4,11 @@ import './Memo.css'
 class Memo extends Component {
 
   render() {
-    return (<div className={'memo'}>One memo</div>);
+    return (
+      <div className={'memo'}>
+      One memo
+      </div>
+    );
   }
 }
 

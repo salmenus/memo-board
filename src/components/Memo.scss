@@ -1,5 +1,7 @@
+@import "../style/base/config";
+
 .memo {
-  background-color: red;
-  height: 150px;
-  margin: 10px;
+  background-color: $memo-title-background-color;
+  height: $memo-title-height;
+  margin: $memo-title-margin;
 }

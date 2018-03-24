@@ -53,6 +53,7 @@ textarea {
 
 html {
   box-sizing: border-box;
+  user-select: none;
 }
 
 *, *:before, *:after {

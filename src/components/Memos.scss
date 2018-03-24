@@ -1,3 +1,5 @@
+@import "../style/base/config";
+
 .memos {
 
   display: flex;
@@ -7,6 +9,6 @@
   align-items: start;
 
   > * {
-    flex: 0 0 150px;
+    flex: 0 0 $memo-title-height;
   }
 }
