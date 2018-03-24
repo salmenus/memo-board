@@ -1,2 +1,12 @@
 .memos {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+
+  > * {
+    flex: 0 0 150px;
+  }
 }
