@@ -18,7 +18,7 @@ class MemoTitle extends Component {
   }
 
   startEditing(input) {
-    if(input) {
+    if(input && typeof input.focus === 'function') {
       input.focus();
     }
   }
@@ -36,20 +36,20 @@ class MemoTitle extends Component {
   render() {
     if(this.state.editing === false) {
       return <div
-            className={'memo-title'}
-            tabIndex={0}
-            onFocus={this.toggleEditingMode.bind(this)}
-            onClick={this.toggleEditingMode.bind(this)}>
+        className={'memo-title'}
+        tabIndex={0}
+        onFocus={this.toggleEditingMode.bind(this)}
+        onClick={this.toggleEditingMode.bind(this)}>
         <span className={'memo-title-text'}>{this.state.title}</span>
       </div>;
     }
 
     return <div className={'memo-title editing'}>
       <input className={'memo-title-input'}
-             defaultValue={this.state.title}
-             onBlur={this.endEditing.bind(this)}
-             onChange={this.updateTitle.bind(this)}
-             ref={this.startEditing.bind(this)}
+        defaultValue={this.state.title}
+        onBlur={this.endEditing.bind(this)}
+        onChange={this.updateTitle.bind(this)}
+        ref={this.startEditing.bind(this)}
       />
 
     </div>

@@ -10,6 +10,7 @@
   @include flat-button(
                   icon('new', $memo-new-button-color ),
                   $memo-new-button-active-background,
+                  $memo-new-button-active-background,
                   false,
                   $memo-new-button-color,
                   right );

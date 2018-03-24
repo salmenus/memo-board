@@ -11,7 +11,7 @@
   }
 }
 
-@mixin flat-button($icon: none, $active-background-color: null, $hide-text: true, $font-color: null, $icon-position: center) {
+@mixin flat-button($icon: none, $hover-background-color: null, $focus-border-color: null, $hide-text: true, $font-color: null, $icon-position: center) {
 
   box-shadow: none;
   box-sizing: border-box;
@@ -51,15 +51,15 @@
   }
 
   &:hover {
-    @if $active-background-color != null {
-      background-color: $active-background-color;
+    @if $hover-background-color != null {
+      background-color: $hover-background-color;
     }
   }
 
   &:active,
   &:focus {
-    @if $active-background-color != null {
-      border-color: $active-background-color;
+    @if $focus-border-color != null {
+      border-color: $focus-border-color;
     }
   }
 }

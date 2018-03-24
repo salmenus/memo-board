@@ -1,26 +1,32 @@
 @charset "UTF-8";
 
 // Colors
-$gray-dark: #333333;
-$gray-light: #a0a0a0;
-$transparent-light: rgba(255, 255, 255, 0.4);
+$white: #ffffff !default;
+$black: #000000 !default;
+$gray-dark: #333333 !default;
+$gray-light: #808080 !default;
+$green-light: #96ceb4 !default;
+$red-light: #ff6f69 !default;
+$yellow: #ffeead !default;
+$white-transparent-light: rgba(255, 255, 255, 0.4) !default;
+$white-transparent: rgba(255, 255, 255, 0.6) !default;
 
 // Font family and size
 $base-font-size: 1em !default;
 $base-font-family: 'Cabin', sans-serif !default;
 
 // Font sizes
-$font-size-large: 1.8em;
-$font-size-medium: 1.4em;
-$font-size-normal: 1em;
-$font-size-small: 0.9em;
+$font-size-large: 1.8em !default;
+$font-size-medium: 1.4em !default;
+$font-size-normal: 1em !default;
+$font-size-small: 0.9em !default;
 
 // Main colors
-$base-background-color: #ffeead !default;
+$base-background-color: $yellow !default;
 $base-font-color: $gray-dark !default;
 
 // Contrast colors
-$contrast-background-color: #333333 !default;
+$contrast-background-color: $gray-dark !default;
 $contrast-font-color: #f0f0f0 !default;
 
 // Contrast font-family
