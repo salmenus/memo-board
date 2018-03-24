@@ -1,5 +1,11 @@
+@import "../../style/base/config";
+
 .footer {
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background-color: $contrast-background-color;
+  color: $contrast-font-color;
 }

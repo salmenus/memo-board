@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Memos from './../Memos'
+import Memos from './../Memos';
+import './Main.css';
 
 class Main extends Component {
   render() {
