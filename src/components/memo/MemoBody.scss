@@ -1,0 +1,18 @@
+@import "../../style/base/config";
+@import "../../style/layout/clamp-paragraph";
+
+.memo-body {
+  display: flex;
+  height: 80%;
+  justify-items: center;
+  align-items: center;
+
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 5px;
+}
+
+.memo-body > p {
+  @include clamp-paragraph($memo-body-max-lines, $memo-tile-background-color)
+}

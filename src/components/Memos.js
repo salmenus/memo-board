@@ -19,7 +19,7 @@ class Memos extends Component {
   render() {
 
     const memos = this.state.memos.map((memo) => {
-      return <Memo key={memo.id} data={memo} />;
+      return <Memo key={memo.id} memo={memo} />;
     });
 
     return (<div className={'memos'}>{memos}</div>);

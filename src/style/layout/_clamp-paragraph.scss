@@ -1,0 +1,19 @@
+@mixin clamp-paragraph($max-lines, $background-color) {
+
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  -webkit-line-clamp: $max-lines;
+  max-height: (1.222 * $max-lines) * 1em;
+
+  &:after {
+    content: "";
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    height: 1.222em;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), $background-color 50%);
+  }
+}
