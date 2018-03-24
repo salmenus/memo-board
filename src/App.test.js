@@ -1,9 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
+import Header from './components/layout/Header';
+import { shallow } from 'enzyme';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  const wrapper = shallow(<App />);
+  expect(wrapper).toBeTruthy();
+});
+
+it('renders page header', () => {
+  const wrapper = shallow(<App />);
+  expect(wrapper.contains(<Header />)).toBe(true);
 });
