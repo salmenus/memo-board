@@ -4,7 +4,11 @@
 $memo-tile-width: 150px !default;
 $memo-tile-height: 150px !default;
 $memo-tile-margin: 10px !default;
-$memo-tile-border-radius: 10px !default;
+$memo-tile-border-radius: 0 !default;
 
 // Style
 $memo-tile-background-color: #96ceb4 !default;
+
+// Memo delete button
+$memo-delete-button-color: #ff6f69 !default;
+$memo-delete-button-active-background: #ffffff !default;

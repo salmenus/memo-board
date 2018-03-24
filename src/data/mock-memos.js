@@ -16,7 +16,7 @@ export default [
   },
   {
     "id": 4,
-    "title": "Making a 3D globe with vanilla JavaScript",
+    "title": "Vanilla JavaScript",
     "body": "Recapped on the syntax and properties of HTML and CSS, so I can then move on to learn JavaScript."
   },
   {
@@ -36,7 +36,7 @@ export default [
   },
   {
     "id": 8,
-    "title": "",
+    "title": "<3",
     "body": "R1D66 #100DaysOfCode Implemented automatic signin feature using HOC in #udemy advanced #reactjs course by @grider #javascript #Redux #nodeJS"
   }
 ];

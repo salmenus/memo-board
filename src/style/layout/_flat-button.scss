@@ -1,7 +1,31 @@
-@mixin flat-button() {
-  background: none;
+@mixin button-background($icon) {
+  background: $icon no-repeat center center;
+  background-size: 60%;
+}
+
+@mixin flat-button($icon: none) {
   box-shadow: none;
   border: none;
   border-radius: 0;
   -webkit-appearance: none;
+  outline: none;
+
+  opacity: 0.5;
+  cursor: pointer;
+  font-size: 0;
+
+  @if $icon != none {
+    @include button-background($icon);
+  }
+  @else {
+    background: none;
+  }
+}
+
+@mixin flat-button-active( $background-color : null ) {
+  outline: none;
+  opacity: 1;
+  @if $background-color != null {
+    background-color: $background-color;
+  }
 }
