@@ -1,8 +1,8 @@
 import i18next from 'i18next';
 import englishTranslation from '../i18n/en';
 
-export default () => {
-  i18next.init(
+export default ({i18n = i18next}) => {
+  i18n.init(
     {
       lng: 'en',
       debug: true,
