@@ -1,0 +1,28 @@
+@import "../../style/base/config";
+@import "../../style/layout/flat-button";
+
+.memo-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  height: 20%;
+  background-color: $transparent-dark;
+}
+
+.memo-bar > .title {
+  flex: 9;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 5px;
+}
+
+.memo-bar > .delete {
+  flex: 1;
+  margin-left: auto;
+  align-self: stretch;
+
+  font-size: 0;
+  @include flat-button;
+}

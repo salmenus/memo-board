@@ -7,9 +7,9 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: start;
-  margin: $memo-title-margin 0;
+  margin: $memo-tile-margin 0;
 
   > * {
-    flex: 0 0 $memo-title-height;
+    flex: 0 0 $memo-tile-height;
   }
 }

@@ -1,0 +1,7 @@
+@mixin flat-button() {
+  background: none;
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+}

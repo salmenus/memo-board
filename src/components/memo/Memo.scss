@@ -1,0 +1,11 @@
+@import "../../style/base/config";
+
+.memo {
+  background-color: $memo-tile-background-color;
+  height: $memo-tile-height;
+  width: $memo-tile-width;
+  margin: $memo-tile-margin;
+
+  border-radius: $memo-tile-border-radius;
+  overflow: hidden;
+}

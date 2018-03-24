@@ -1,4 +1,6 @@
 @import "style/base/config";
 @import "style/layout/app-layout-mixin";
 
-@include app-layout(app);
+.app {
+  @include app-layout(1fr, 6em auto 3em);
+}

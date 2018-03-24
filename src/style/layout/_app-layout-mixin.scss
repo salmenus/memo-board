@@ -1,14 +1,11 @@
-@mixin app-layout ($base-class-name) {
+@mixin app-layout($grid-template-columns, $grid-template-rows) {
 
-  .#{$base-class-name} {
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: $grid-template-columns;
+  grid-template-rows: $grid-template-rows;
 
-    min-height: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 6em auto 3em;
-
-    > * {
-      grid-column: 1 / -1;
-    }
+  > * {
+    grid-column: 1 / -1;
   }
 }

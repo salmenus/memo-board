@@ -1,9 +1,10 @@
 @charset "UTF-8";
 
 // Dimensions
-$memo-title-width: 150px;
-$memo-title-height: 150px;
-$memo-title-margin: 10px;
+$memo-tile-width: 150px !default;
+$memo-tile-height: 150px !default;
+$memo-tile-margin: 10px !default;
+$memo-tile-border-radius: 10px !default;
 
 // Style
-$memo-title-background-color: #96ceb4
+$memo-tile-background-color: #96ceb4 !default;
