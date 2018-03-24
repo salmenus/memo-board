@@ -1,26 +1,46 @@
-@mixin button-background($icon) {
+@mixin button-background($icon, $icon-position) {
   background: $icon no-repeat center center;
-  background-size: 60%;
+  background-size: auto 60%;
+
+  @if $icon-position == left {
+    background-position: left 1em center;
+  }
+
+  @if $icon-position == right {
+    background-position: right 1em center;
+  }
 }
 
-@mixin flat-button($icon: none, $active-background-color: null) {
+@mixin flat-button($icon: none, $active-background-color: null, $hide-text: true, $font-color: null, $icon-position: center) {
 
   box-shadow: none;
-  border: none;
+  box-sizing: border-box;
+  border: 3px solid transparent;
   border-radius: 0;
   -webkit-appearance: none;
   outline: none;
 
   opacity: 0.8;
   cursor: pointer;
-  font-size: 0;
 
+  // Text display
+  @if $hide-text or $font-color == null {
+    font-size: 0;
+  } @else {
+    color: $font-color;
+    text-align: $icon-position;
+    text-transform: capitalize;
+  }
+
+  // Icon display
   @if $icon != none {
-    @include button-background($icon);
+    @include button-background($icon, $icon-position);
   }
   @else {
     background: none;
   }
+
+  // Hover and active states
 
   &:active,
   &:focus,
@@ -28,9 +48,18 @@
 
     outline: none;
     opacity: 1;
+  }
 
+  &:hover {
     @if $active-background-color != null {
       background-color: $active-background-color;
+    }
+  }
+
+  &:active,
+  &:focus {
+    @if $active-background-color != null {
+      border-color: $active-background-color;
     }
   }
 }

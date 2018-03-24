@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Memo from './memo/Memo';
-import './Memos.css'
+import './MemosList.css'
 
 class Memos extends Component {
 

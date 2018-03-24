@@ -12,7 +12,7 @@
 }
 
 .memo-bar > .title {
-  flex: 9;
+  flex: 10;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -21,7 +21,7 @@
 }
 
 .memo-bar > .delete {
-  flex: 1;
+  flex: 2;
   margin-left: auto;
   align-self: stretch;
   @include flat-button( icon('delete', $memo-delete-button-color ), $memo-delete-button-active-background );

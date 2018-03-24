@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Memos from './../Memos';
+import Memos from '../MemosList';
 import './Main.css';
 
 class Main extends Component {

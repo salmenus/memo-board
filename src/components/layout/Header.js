@@ -1,6 +1,6 @@
 import React from 'react';
 import { t } from 'i18next';
-import NewMemo from './../NewMemo';
+import NewMemo from '../NewMemoButton';
 import './Header.css';
 
 const Header = () => {
