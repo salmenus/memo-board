@@ -9,8 +9,16 @@
 
   border-radius: $memo-tile-border-radius;
   overflow: hidden;
-}
 
-.memo.updating {
-  opacity: $memo-tile-editing-opacity;
+  &.updating {
+    opacity: $memo-tile-editing-opacity;
+  }
+
+  .memo-delete-button {
+    display: none;
+  }
+
+  &:hover .memo-delete-button {
+    display: inherit;
+  }
 }

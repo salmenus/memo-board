@@ -2,6 +2,7 @@
 @import "../../style/layout/flat-input";
 
 .memo-title {
+
   display: flex;
   box-sizing: border-box;
   border: 3px solid transparent;
@@ -9,22 +10,21 @@
   cursor: pointer;
   align-items: center;
   padding: 0 5px;
-}
 
-.memo-title.editing {
-  background-color: $memo-tile-editing-background-color;
-  border-color: $memo-tile-editing-border-color;
-  cursor: text;
-}
+  &.editing {
+    background-color: $memo-tile-editing-background-color;
+    border-color: $memo-tile-editing-border-color;
+    cursor: text;
+  }
 
-.memo-title:hover {
-  color: $memo-input-hover-color;
+  &:hover {
+    color: $memo-input-hover-color;
+  }
 }
 
 .memo-title-text {
   overflow: hidden;
   width: 100%;
-  text-align: center;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
