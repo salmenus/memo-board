@@ -83,6 +83,7 @@ class MemoTitle extends Component {
         onBlur={this.endEditing.bind(this)}
         onKeyPress={this.handleKeyPress.bind(this)}
         ref={this.startEditing.bind(this)}
+        maxLength={140}
       />
 
     </div>

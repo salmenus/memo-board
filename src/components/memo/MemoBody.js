@@ -73,6 +73,7 @@ class MemoBody extends Component {
         defaultValue={this.state.body}
         onBlur={this.endEditing.bind(this)}
         ref={this.startEditing.bind(this)}
+        maxLength={140}
       />
 
     </div>;
