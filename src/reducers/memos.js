@@ -16,7 +16,7 @@ const memos = (state = null, action) => {
     }
     case 'UPDATE_MEMOS': {
       const result = Array.isArray(action.memos) ? [...action.memos] : [];
-      return result.sort((memo1, memo2) => memo1.creationDate < memo2.creationDate);
+      return result.sort((memo1, memo2) => memo2.creationDate.getTime() - memo1.creationDate.getTime());
     }
     case 'DELETE_MEMO': {
       return state.filter(memo => memo.id !== action.id);
