@@ -14,4 +14,6 @@ const App = () => {
   );
 };
 
+const store = createStore(reducers);
+
 export default App;
