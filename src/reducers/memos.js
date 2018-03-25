@@ -1,9 +1,12 @@
 const memos = (state = null, action) => {
+
   switch (action.type) {
+
     case 'ADD_MEMO': {
       const newMemo = {title: '', body: '', ...action.memo};
       return [newMemo, ...state];
     }
+
     case 'UPDATE_MEMO': {
       const updatedMemo = action.memo;
       return state.map(memo => {
@@ -14,13 +17,18 @@ const memos = (state = null, action) => {
         }
       });
     }
+
     case 'UPDATE_MEMOS': {
       const result = Array.isArray(action.memos) ? [...action.memos] : [];
-      return result.sort((memo1, memo2) => memo2.creationDate.getTime() - memo1.creationDate.getTime());
+      return result
+        .filter(memo => memo.id && memo.creationDate instanceof Date)
+        .sort((memo1, memo2) => memo2.creationDate.getTime() - memo1.creationDate.getTime());
     }
+
     case 'DELETE_MEMO': {
       return state.filter(memo => memo.id !== action.id);
     }
+
     default: {
       return state;
     }
