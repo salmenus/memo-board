@@ -10,7 +10,7 @@ export default async ({firebase = Firebase, store = null}) => {
 
   const newMemo = {
     id: memoReference.id,
-    creationDate: creationDate
+    creationDate
   };
 
   if(store && typeof store.dispatch === 'function') {

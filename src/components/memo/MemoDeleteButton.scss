@@ -1,0 +1,13 @@
+@import "../../style/base/config";
+@import "../../style/layout/icon";
+@import "../../style/layout/flat-button";
+
+.memo-delete-button {
+  flex: 2;
+  margin-left: auto;
+  align-self: stretch;
+  @include flat-button(
+                  icon('delete', $memo-delete-button-color ),
+                  $memo-delete-button-active-background-color,
+                  $memo-delete-button-hover-border-color);
+}

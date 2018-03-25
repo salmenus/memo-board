@@ -17,6 +17,9 @@ const memos = (state = null, action) => {
     case 'UPDATE_MEMOS': {
       return Array.isArray(action.memos) ? [...action.memos] : [];
     }
+    case 'DELETE_MEMO': {
+      return state.filter(memo => memo.id !== action.id);
+    }
     default: {
       return state;
     }
