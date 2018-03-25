@@ -6,7 +6,7 @@ jest.mock('redux', () => {
 });
 
 it('reducersIndex is called with all available reducers', () => {
-  const expectedReducers = ['user', 'signIn'];
+  const expectedReducers = ['memos'];
   const reducersList =
     combineReducers.mock.calls[combineReducers.mock.calls.length - 1][0];
   expect(Object.keys(reducersList)).toEqual(expectedReducers);
