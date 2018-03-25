@@ -60,6 +60,7 @@ class MemoBody extends Component {
         <div
           className={'memo-body'}
           tabIndex={0}
+          title={this.state.body}
           onFocus={this.toggleEditingMode.bind(this)}
           onClick={this.toggleEditingMode.bind(this)}>
           <p className={'memo-body-text'}>{this.state.body}</p>

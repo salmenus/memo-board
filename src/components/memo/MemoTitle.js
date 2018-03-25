@@ -67,7 +67,7 @@ class MemoTitle extends Component {
         tabIndex={0}
         onFocus={this.toggleEditingMode.bind(this)}
         onClick={this.toggleEditingMode.bind(this)}>
-        <span className={'memo-title-text'}>{this.state.title}</span>
+        <span className={'memo-title-text'} title={this.state.title}>{this.state.title}</span>
       </div>;
     }
 
