@@ -53,6 +53,12 @@ class MemoTitle extends Component {
     this.updateTitle();
   }
 
+  handleKeyPress(event) {
+    if (event && event.key === 'Enter' && this.form.input) {
+      this.form.input.blur();
+    }
+  }
+
   render() {
 
     if(this.state.editing === false) {
@@ -69,6 +75,7 @@ class MemoTitle extends Component {
       <input className={'memo-title-input'}
         defaultValue={this.state.title}
         onBlur={this.endEditing.bind(this)}
+        onKeyPress={this.handleKeyPress.bind(this)}
         ref={this.startEditing.bind(this)}
       />
 
