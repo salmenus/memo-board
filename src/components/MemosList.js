@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Memo from './memo/Memo';
-import './MemosList.css'
+import './MemosList.css';
+import Loading from './Loading';
+import loadMemos from './../data/loadMemos';
 
 class Memos extends Component {
 
@@ -8,15 +10,22 @@ class Memos extends Component {
     super();
 
     this.state = {
-      memos: []
+      memos: null
     };
+  }
 
-    import("../data/mock-memos").then(memos => {
-      this.setState({memos:memos.default});
-    })
+  componentWillMount() {
+    loadMemos()
+      .then(memos => {
+        this.setState({memos});
+      });
   }
 
   render() {
+
+    if(this.state.memos === null) {
+      return <Loading />;
+    }
 
     const memos = this.state.memos.map((memo) => {
       return <Memo key={memo.id} memo={memo} />;
