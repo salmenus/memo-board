@@ -13,7 +13,7 @@ class DeleteMemoButton extends Component {
     };
   }
 
-  delete () {
+  delete = () => {
 
     this.setState({isDeletingMemo: true});
 
@@ -31,7 +31,7 @@ class DeleteMemoButton extends Component {
           this.props.onUpdateEnd();
         }
       });
-  }
+  };
 
   render() {
     return (
@@ -39,7 +39,7 @@ class DeleteMemoButton extends Component {
         className={'memo-delete-button'}
         title={t('delete memo')}
         disabled={this.state.isDeletingMemo}
-        onClick={this.delete.bind(this)}
+        onClick={this.delete}
       >{t('delete memo')}</button>
     );
   }

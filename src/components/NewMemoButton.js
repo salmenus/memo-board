@@ -13,17 +13,17 @@ class NewMemo extends Component {
     };
   }
 
-  createNewMemo() {
+  createNewMemo = () => {
     this.setState({isCreatingNewMemo: true});
     createNewMemo({store: this.context.store})
       .then(() => this.setState({isCreatingNewMemo: false}))
       .catch(() => this.setState({isCreatingNewMemo: false}));
-  }
+  };
 
   render() {
     return <button
       className={'new-memo-button'}
-      onClick={this.createNewMemo.bind(this)}
+      onClick={this.createNewMemo}
       disabled={this.state.isCreatingNewMemo}>{ t('create new memo') }</button>
   }
 }

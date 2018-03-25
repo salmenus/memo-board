@@ -13,11 +13,11 @@ class Memo extends Component {
     };
   }
 
-  onUpdateStart() {
+  onUpdateStart = () => {
     this.setState({updating: true});
   };
 
-  onUpdateEnd() {
+  onUpdateEnd = () => {
     this.setState({updating: false});
   };
 
@@ -26,8 +26,8 @@ class Memo extends Component {
       <div className={`memo` + ((this.state.updating) ? ' updating' : '')}>
         <MemoBar memo={this.props.memo}
                  toggleEditingMode={this.props.toggleEditingMode}
-                 onUpdateStart={this.onUpdateStart.bind(this)}
-                 onUpdateEnd={this.onUpdateEnd.bind(this)} />
+                 onUpdateStart={this.onUpdateStart}
+                 onUpdateEnd={this.onUpdateEnd} />
         <MemoBody memo={this.props.memo} />
       </div>
     );

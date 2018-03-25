@@ -17,7 +17,7 @@ class MemoBody extends Component {
     };
   }
 
-  updateBody() {
+  updateBody = () => {
 
     // Check that body has changed before starting update
     const newBody = this.form.input.value;
@@ -31,27 +31,27 @@ class MemoBody extends Component {
       store: this.context.store,
       memo: {...this.props.memo, body: newBody}})
     // Reset old body in case of failure to update
-      .catch((error) => this.setState({body: this.form.inputInitialValue}));
-  }
+      .catch(() => this.setState({body: this.form.inputInitialValue}));
+  };
 
-  toggleEditingMode() {
+  toggleEditingMode = () => {
     if(this.state.editing === false) {
       this.setState({editing: true});
     }
-  }
+  };
 
-  startEditing(input) {
+  startEditing = (input) => {
     if(input !== null) {
       this.form.input = input;
       this.form.inputInitialValue = input.value;
       input.focus();
     }
-  }
+  };
 
-  endEditing() {
+  endEditing = () => {
     this.setState({editing: false});
     this.updateBody();
-  }
+  };
 
   render() {
 
@@ -61,8 +61,8 @@ class MemoBody extends Component {
           className={'memo-body'}
           tabIndex={0}
           title={this.state.body}
-          onFocus={this.toggleEditingMode.bind(this)}
-          onClick={this.toggleEditingMode.bind(this)}>
+          onFocus={this.toggleEditingMode}
+          onClick={this.toggleEditingMode}>
           <p className={'memo-body-text'}>{this.state.body}</p>
         </div>
       );
@@ -71,8 +71,8 @@ class MemoBody extends Component {
     return <div className={'memo-body editing'}>
       <textarea className={'memo-body-input'}
         defaultValue={this.state.body}
-        onBlur={this.endEditing.bind(this)}
-        ref={this.startEditing.bind(this)}
+        onBlur={this.endEditing}
+        ref={this.startEditing}
         maxLength={140}
       />
 
