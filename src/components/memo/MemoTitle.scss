@@ -31,7 +31,7 @@
 
 .memo-title-input {
   @include flat-input;
-  text-align: center;
+  text-align: left;
   width: 100%;
   color: $memo-input-color;
 }

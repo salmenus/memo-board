@@ -8,8 +8,11 @@ class MemoBar extends Component {
   render() {
     return (
       <div className={'memo-bar'}>
-        <MemoTitle memo={this.props.memo} />
-        <DeleteMemoButton memo={this.props.memo}
+        <MemoTitle
+          memo={this.props.memo}
+          toggleEditingMode={this.props.toggleEditingMode} />
+        <DeleteMemoButton
+          memo={this.props.memo}
           onUpdateStart={this.props.onUpdateStart}
           onUpdateEnd={this.props.onUpdateEnd}/>
       </div>

@@ -5,7 +5,7 @@ export default ({i18n} = {i18n: i18next}) => {
   i18n.init(
     {
       lng: 'en',
-      debug: true,
+      debug: false,
       fallbackLng: 'cimode',
       saveMissing: false,
       resources: {

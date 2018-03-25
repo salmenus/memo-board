@@ -17,6 +17,12 @@ class MemoTitle extends Component {
     };
   }
 
+  componentDidMount() {
+    if(this.props.toggleEditingMode === true) {
+      this.toggleEditingMode();
+    }
+  }
+
   updateTitle() {
 
     // Check that title has changed before starting update

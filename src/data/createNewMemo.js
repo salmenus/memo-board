@@ -11,8 +11,7 @@ export default async ({firebase = Firebase, store = null}) => {
 
   const newMemo = {
     id: memoReference.id,
-    creationDate: memo.data().creation_date,
-    blank: true
+    creationDate: memo.data().creation_date
   };
 
   store.dispatch({

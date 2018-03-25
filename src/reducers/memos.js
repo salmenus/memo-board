@@ -1,15 +1,15 @@
-const memos = (state = null, action) => {
+export default (memos = [], action) => {
 
   switch (action.type) {
 
     case 'ADD_MEMO': {
-      const newMemo = {title: '', body: '', ...action.memo};
-      return [newMemo, ...state];
+      const newMemo = {title: '', body: '', mostRecent: true, ...action.memo};
+      return [newMemo, ...memos.map(memo => ({...memo, mostRecent: false}))];
     }
 
     case 'UPDATE_MEMO': {
       const updatedMemo = action.memo;
-      return state.map(memo => {
+      return memos.map(memo => {
         if(memo.id !== updatedMemo.id) {
           return memo;
         } else {
@@ -19,20 +19,18 @@ const memos = (state = null, action) => {
     }
 
     case 'UPDATE_MEMOS': {
-      const result = Array.isArray(action.memos) ? [...action.memos] : [];
+      let result = Array.isArray(action.memos) ? [...action.memos] : [];
       return result
         .filter(memo => memo.id && memo.creationDate instanceof Date)
         .sort((memo1, memo2) => memo2.creationDate.getTime() - memo1.creationDate.getTime());
     }
 
     case 'DELETE_MEMO': {
-      return state.filter(memo => memo.id !== action.id);
+      return memos.filter(memo => memo.id !== action.id);
     }
 
     default: {
-      return state;
+      return memos;
     }
   }
 };
-
-export default memos;
