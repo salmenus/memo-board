@@ -6,7 +6,10 @@ import './Header.css';
 const Header = () => {
   return (
     <header className={'header'}>
-      <h1 className={'title'}>{t('app name')}</h1>
+      <h1 className={'title'}>
+        <span className={'logo'} />
+        <span>{t('app name')}</span>
+        </h1>
       <div className={'actions'}>
         <NewMemo />
       </div>

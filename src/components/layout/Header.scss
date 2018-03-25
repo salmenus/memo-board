@@ -12,9 +12,21 @@
   color: $contrast-font-color;
 
   > .title {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 60%;
     font-size: $font-size-large;
-    text-align: center;
+
+    > .logo {
+      display: inline-block;
+      width: 1.2em;
+      height: 1.2em;
+      margin-right: 0.5em;
+      background: url('./logo.png') left center no-repeat;
+      background-size: contain;
+    }
   }
 
   > .actions {
