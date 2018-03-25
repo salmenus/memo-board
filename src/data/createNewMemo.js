@@ -13,12 +13,10 @@ export default async ({firebase = Firebase, store = null}) => {
     creationDate
   };
 
-  if(store && typeof store.dispatch === 'function') {
-    store.dispatch({
-      type: 'ADD_MEMO',
-      memo: {...newMemo}
-    });
-  }
+  store.dispatch({
+    type: 'ADD_MEMO',
+    memo: {...newMemo}
+  });
 
   return newMemo;
 };

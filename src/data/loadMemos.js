@@ -14,12 +14,10 @@ export default async ({firebase = Firebase, store = null}) => {
     };
   });
 
-  if(store && typeof store.dispatch === 'function') {
-    store.dispatch({
-      type: 'UPDATE_MEMOS',
-      memos
-    });
-  }
+  store.dispatch({
+    type: 'UPDATE_MEMOS',
+    memos
+  });
 
   return memos;
 };
