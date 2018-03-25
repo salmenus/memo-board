@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { t } from 'i18next';
-import './MemoDeleteButton.css'
+import './DeleteMemoButton.css'
 import deleteMemo from './../../data/deleteMemo';
 import PropTypes from "prop-types";
 
-class MemoDeleteButton extends Component {
+class DeleteMemoButton extends Component {
 
   constructor() {
     super();
@@ -36,8 +36,8 @@ class MemoDeleteButton extends Component {
   }
 }
 
-MemoDeleteButton.contextTypes = {
+DeleteMemoButton.contextTypes = {
   store: PropTypes.object
 };
 
-export default MemoDeleteButton;
+export default DeleteMemoButton;

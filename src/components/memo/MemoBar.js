@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './MemoBar.css';
 import MemoTitle from './MemoTitle';
-import MemoDeleteButton from './MemoDeleteButton';
+import DeleteMemoButton from './DeleteMemoButton';
 
 class MemoBar extends Component {
 
@@ -9,7 +9,7 @@ class MemoBar extends Component {
     return (
       <div className={'memo-bar'}>
         <MemoTitle memo={this.props.memo} />
-        <MemoDeleteButton memo={this.props.memo} />
+        <DeleteMemoButton memo={this.props.memo} />
       </div>
     );
   }
