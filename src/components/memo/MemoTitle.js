@@ -11,6 +11,7 @@ class MemoTitle extends Component {
       title: props.memo.title,
       editing: false
     };
+
     this.form = {
       input: null
     };
@@ -53,6 +54,7 @@ class MemoTitle extends Component {
   }
 
   render() {
+
     if(this.state.editing === false) {
       return <div
         className={'memo-title'}
