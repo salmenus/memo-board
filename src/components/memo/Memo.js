@@ -8,7 +8,7 @@ class Memo extends Component {
   render() {
     const memo = this.props.memo;
     return (
-      <div className={`memo` + ((memo.isNew) ? ' new-memo' : '')}>
+      <div className={`memo` + ((memo.isNew) ? ' new-memos' : '')}>
         <MemoBar memo={memo} />
         <MemoBody memo={memo} />
       </div>

@@ -1,4 +1,4 @@
-const memo = (state = null, action) => {
+const memos = (state = null, action) => {
   switch (action.type) {
     case 'UPDATE_MEMO':
       const memo = action.memo;
@@ -8,4 +8,4 @@ const memo = (state = null, action) => {
   }
 };
 
-export default memo;
+export default memos;

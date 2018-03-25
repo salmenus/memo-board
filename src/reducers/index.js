@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import memo from './memo';
+import memos from './memos';
 
 const reducers = combineReducers({
-  memo
+  memo: memos
 });
 
 export default reducers;
