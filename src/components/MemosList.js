@@ -18,7 +18,10 @@ class Memos extends Component {
       return <LoadingSpinner />;
     }
 
-    const memoTags = this.props.memos.map(memo => <Memo key={memo.id} memo={memo} toggleEditingMode={memo.mostRecent} />);
+    const memoTags = this.props.memos.map(memo =>
+      <Memo key={memo.id} memo={memo}
+        toggleEditingMode={memo.mostRecent && !memo.title && !memo.body} />);
+
     return (<div className={'memos'}>{memoTags}</div>);
   }
 }

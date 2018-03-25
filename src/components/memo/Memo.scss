@@ -13,12 +13,16 @@
   &.updating {
     opacity: $memo-tile-editing-opacity;
   }
+}
 
-  .memo-delete-button {
-    display: none;
-  }
+@media (hover: hover) {
+  .memo {
+    .memo-delete-button {
+      display: none;
+    }
 
-  &:hover .memo-delete-button {
-    display: inherit;
+    &:hover .memo-delete-button {
+      display: inherit;
+    }
   }
 }
