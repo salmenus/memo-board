@@ -78,10 +78,10 @@ class MemoBody extends Component {
 
     </div>;
   }
-}
 
-MemoBody.contextTypes = {
-  store: PropTypes.object
-};
+  static contextTypes = {
+    store: PropTypes.object
+  };
+}
 
 export default MemoBody;

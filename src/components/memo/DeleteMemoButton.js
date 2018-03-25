@@ -43,10 +43,10 @@ class DeleteMemoButton extends Component {
       >{t('delete memo')}</button>
     );
   }
-}
 
-DeleteMemoButton.contextTypes = {
-  store: PropTypes.object
-};
+  static contextTypes = {
+    store: PropTypes.object
+  };
+}
 
 export default DeleteMemoButton;

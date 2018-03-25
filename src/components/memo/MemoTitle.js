@@ -88,10 +88,10 @@ class MemoTitle extends Component {
 
     </div>
   }
-}
 
-MemoTitle.contextTypes = {
-  store: PropTypes.object
-};
+  static contextTypes = {
+    store: PropTypes.object
+  };
+}
 
 export default MemoTitle;

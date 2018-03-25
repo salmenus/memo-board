@@ -11,14 +11,16 @@ class NewMemo extends Component {
     this.state = {
       isCreatingNewMemo: false
     };
+
+    this.createNewMemo = this.createNewMemo.bind(this);
   }
 
-  createNewMemo = () => {
+  createNewMemo() {
     this.setState({isCreatingNewMemo: true});
     createNewMemo({store: this.context.store})
       .then(() => this.setState({isCreatingNewMemo: false}))
       .catch(() => this.setState({isCreatingNewMemo: false}));
-  };
+  }
 
   render() {
     return <button
@@ -26,10 +28,10 @@ class NewMemo extends Component {
       onClick={this.createNewMemo}
       disabled={this.state.isCreatingNewMemo}>{ t('create new memo') }</button>
   }
-}
 
-NewMemo.contextTypes = {
-  store: PropTypes.object
-};
+  static contextTypes = {
+    store: PropTypes.object
+  };
+}
 
 export default NewMemo;
