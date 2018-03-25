@@ -1,12 +1,35 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { t } from 'i18next';
 import './NewMemoButton.css'
+import createNewMemo from './../data/createNewMemo';
 
 class NewMemo extends Component {
 
+  constructor() {
+    super();
+    this.state = {
+      isCreatingNewMemo: false
+    };
+  }
+
+  createNewMemo() {
+    this.setState({isCreatingNewMemo: true});
+    createNewMemo({store: this.context.store})
+      .then(() => this.setState({isCreatingNewMemo: false}))
+      .catch(() => this.setState({isCreatingNewMemo: false}));
+  }
+
   render() {
-    return <button className={'new-memo-button'}>{ t('create new memo') }</button>
+    return <button
+      className={'new-memo-button'}
+      onClick={this.createNewMemo.bind(this)}
+      disabled={this.state.isCreatingNewMemo}>{ t('create new memo') }</button>
   }
 }
+
+NewMemo.contextTypes = {
+  store: PropTypes.object
+};
 
 export default NewMemo;
