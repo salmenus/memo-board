@@ -1,33 +1,24 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Memo from './memo/Memo';
 import './MemosList.css';
-import Loading from './Loading';
+import LoadingSpinner from './LoadingSpinner';
 import loadMemos from './../data/loadMemos';
 
 class Memos extends Component {
 
-  constructor() {
-    super();
-
-    this.state = {
-      memos: null
-    };
-  }
-
   componentWillMount() {
-    loadMemos()
-      .then(memos => {
-        this.setState({memos});
-      });
+    loadMemos({store: this.context.store});
   }
 
   render() {
 
-    if(this.state.memos === null) {
-      return <Loading />;
+    if(Array.isArray(this.props.memos) === false) {
+      return <LoadingSpinner />;
     }
 
-    const memos = this.state.memos.map((memo) => {
+    const memos = this.props.memos.map((memo) => {
       return <Memo key={memo.id} memo={memo} />;
     });
 
@@ -35,4 +26,12 @@ class Memos extends Component {
   }
 }
 
-export default Memos;
+Memos.contextTypes = {
+  store: PropTypes.object
+};
+
+const mapStateToProps = state => ({
+  memos: (state.memos) ? [...state.memos] : null
+});
+
+export default connect(mapStateToProps, null)(Memos);

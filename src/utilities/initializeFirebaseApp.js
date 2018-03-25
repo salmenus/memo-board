@@ -1,7 +1,5 @@
 import Firebase from '@firebase/app';
 
-console.dir(process.env);
-
 export default ({firebase} = {firebase: Firebase}) => {
   return firebase.initializeApp({
     projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,

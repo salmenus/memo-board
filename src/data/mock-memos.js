@@ -22,7 +22,7 @@ export default [
   {
     "id": 5,
     "title": "What did I do with Javascript today?",
-    "body": "Today's Progress: Worked on challenge JavaScript Calculator from #freeCodeCamp. Looked into game development in javascript!"
+      "body": "Today's Progress: Worked on challenge JavaScript Calculator from #freeCodeCamp. Looked into game development in javascript!"
   },
   {
     "id": 6,
