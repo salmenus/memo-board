@@ -9,6 +9,8 @@ export default async ({firebase = Firebase, store = null, memo}) => {
     creation_date: memo.creationDate
   };
 
+  // Simulates API call:
+  // POST idea/update { “id”: “:id”, “title”: “:title”, “body”: “:body” }
   await firebase.firestore().collection('memos').doc(memo.id).update(newData);
 
   const newMemo = {...memo};

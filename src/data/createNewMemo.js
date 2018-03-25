@@ -3,14 +3,16 @@ import '@firebase/firestore';
 
 export default async ({firebase = Firebase, store = null}) => {
 
-  const creationDate = new Date();
-  const memoReference = await firebase.firestore().collection('memos').add({
-    creation_date: creationDate
-  });
+  // Simulates API call:
+  // GET ideas/new -> { “id”: “:id”, “created_date”: “:created_date” }
+  const memoReference = await firebase.firestore().collection('memos')
+    .add({creation_date: firebase.firestore.FieldValue.serverTimestamp()});
+  const memo = await firebase.firestore().collection('memos').doc(memoReference.id).get();
 
   const newMemo = {
     id: memoReference.id,
-    creationDate
+    creationDate: memo.data().creation_date,
+    blank: true
   };
 
   store.dispatch({
