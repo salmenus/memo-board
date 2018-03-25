@@ -14,13 +14,22 @@ class DeleteMemoButton extends Component {
   }
 
   delete () {
+
     this.setState({isDeletingMemo: true});
+
+    if(typeof this.props.onUpdateStart === 'function') {
+      this.props.onUpdateStart();
+    }
+
     deleteMemo({
       store: this.context.store,
       id: this.props.memo.id
     })
       .catch(() => {
         this.setState({isDeletingMemo: false});
+        if(typeof this.props.onUpdateEnd === 'function') {
+          this.props.onUpdateEnd();
+        }
       });
   }
 

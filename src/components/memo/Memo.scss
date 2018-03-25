@@ -10,3 +10,7 @@
   border-radius: $memo-tile-border-radius;
   overflow: hidden;
 }
+
+.memo.updating {
+  opacity: $memo-tile-editing-opacity;
+}

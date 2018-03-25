@@ -15,3 +15,7 @@
                   $memo-new-button-color,
                   right );
 }
+
+.new-memo-button:disabled {
+  opacity:$memo-tile-editing-opacity;
+}

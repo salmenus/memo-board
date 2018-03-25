@@ -9,7 +9,9 @@ class MemoBar extends Component {
     return (
       <div className={'memo-bar'}>
         <MemoTitle memo={this.props.memo} />
-        <DeleteMemoButton memo={this.props.memo} />
+        <DeleteMemoButton memo={this.props.memo}
+          onUpdateStart={this.props.onUpdateStart}
+          onUpdateEnd={this.props.onUpdateEnd}/>
       </div>
     );
   }
