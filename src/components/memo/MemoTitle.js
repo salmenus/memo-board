@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import './MemoTitle.css'
+import './MemoTitle.css';
+import updateMemo from './../../data/updateMemo';
+import PropTypes from "prop-types";
 
 class MemoTitle extends Component {
 
@@ -7,9 +9,28 @@ class MemoTitle extends Component {
     super(props);
     this.state = {
       title: props.memo.title,
-      editing: false,
-      isNewMemo: props.memo.isNew
+      editing: false
     };
+    this.form = {
+      input: null
+    };
+  }
+
+  updateTitle() {
+
+    // Check that title has changed before starting update
+    const newTitle = this.form.input.value;
+    if(newTitle === this.form.inputInitialValue) {
+      return;
+    }
+
+    this.setState({title: newTitle});
+
+    updateMemo({
+      store: this.context.store,
+      memo: {...this.props.memo, title: newTitle}})
+      // Reset old title in case of failure to update
+      .catch((error) => this.setState({title: this.form.inputInitialValue}));
   }
 
   toggleEditingMode() {
@@ -19,25 +40,16 @@ class MemoTitle extends Component {
   }
 
   startEditing(input) {
-    if(input && typeof input.focus === 'function') {
+    if(input !== null) {
+      this.form.input = input;
+      this.form.inputInitialValue = input.value;
       input.focus();
     }
   }
 
   endEditing() {
     this.setState({editing: false});
-  }
-
-  updateTitle(event) {
-    if(event && event.target && event.target.value) {
-      this.setState({title: event.target.value});
-    }
-  }
-
-  componentDidMount() {
-    if(this.state.isNewMemo) {
-      this.toggleEditingMode();
-    }
+    this.updateTitle();
   }
 
   render() {
@@ -55,12 +67,15 @@ class MemoTitle extends Component {
       <input className={'memo-title-input'}
         defaultValue={this.state.title}
         onBlur={this.endEditing.bind(this)}
-        onChange={this.updateTitle.bind(this)}
         ref={this.startEditing.bind(this)}
       />
 
     </div>
   }
 }
+
+MemoTitle.contextTypes = {
+  store: PropTypes.object
+};
 
 export default MemoTitle;

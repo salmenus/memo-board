@@ -8,8 +8,8 @@ export default async ({firebase = Firebase, store = null}) => {
     const data = doc.data();
     return {
       id: doc.id,
-      title: data.title,
-      body: data.body,
+      title: data.title || '',
+      body: data.body || '',
       creationDate: data.creation_date
     };
   });

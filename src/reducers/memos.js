@@ -1,7 +1,7 @@
 const memos = (state = null, action) => {
   switch (action.type) {
     case 'ADD_MEMO': {
-      const newMemo = {...action.memo};
+      const newMemo = {title: '', body: '', ...action.memo};
       return [newMemo, ...state];
     }
     case 'UPDATE_MEMO': {
