@@ -1,4 +1,4 @@
-export default (memos = [], action) => {
+export default (memos = null, action) => {
 
   switch (action.type) {
 
