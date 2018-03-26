@@ -19,6 +19,7 @@ export default class extends Component {
     this.observable = Observable.create((observer) => {
       this.observer = observer;
     })
+      .throttleTime(2000)
       .subscribe(ntofication => {
         for(const callback of this.callbacks) {
           callback(ntofication);

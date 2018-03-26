@@ -23,7 +23,9 @@ export default class extends Component {
 
   render() {
     return <div className={'notifications'}>
-      <span>NOTIFICATIONS</span>
+      <div className={'message'}>
+        <p>Notification message that spreads over multiple line ... line 1 line 2 ... and much much much more ...</p>
+      </div>
     </div>;
   }
 
