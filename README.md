@@ -12,7 +12,7 @@ npm install
 npm start
 ```
 
-The open the following URL in your browser:
+Then open this URL in the browser to start the app:
 <http://localhost:3000>
 
 #### Run Unit Tests
@@ -32,12 +32,12 @@ npm test
 * Updating memo titles and bodies.
 * Sorting memos by creation date or by title.
 * Notifications system to notify about updates and errors.
-* Data persistence through Firebase - that simulates the backend RESET service described in the challenge document.
+* Data persistence through Firebase - that simulates the backend RESET services described in the challenge document.
 * Responsive design.
 
 #### Technologies used
 
-* **ReactJS** and **Redux** for UI and data handling.
+* **React JS** and **Redux** for UI and data handling.
 * **SASS** for CSS pre-processing.
 * **RxJS** for notifications.
 * **Firestore SDK** for data persistence.
@@ -47,7 +47,7 @@ npm test
 
 * This project was developed on `Windows` using `Node JS v8.9.4`.
 * Manual QA was done using `Chrome v65` and `Firefox v59` on `Windows`.
-* An issue was noticed when testing on `Microsoft Edge v41.16` (data doesn't load). The problem is due to a bug in the Firebase SDK and it's currently being fixed. Further details here: <https://github.com/firebase/firebase-js-sdk/issues/461>.
+* An issue was noticed when testing on `Microsoft Edge v41.16` (data doesn't load). The problem is due to a bug in the Firebase SDK and it's currently being fixed. Further details in this link: <https://github.com/firebase/firebase-js-sdk/issues/461>.
 
 ## About The Author
 
