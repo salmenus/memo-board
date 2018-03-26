@@ -10,11 +10,11 @@ export default class extends Component {
   }
 
   componentDidMount() {
-    this.context.subscribe(this.processNotification);
+    this.context.subscribeToNotifications(this.processNotification);
   }
 
   componentWillUnmount() {
-    this.context.unsubscribe(this.processNotification);
+    this.context.unsubscribeFromNotifications(this.processNotification);
   }
 
   processNotification(notification) {
@@ -28,7 +28,7 @@ export default class extends Component {
   }
 
   static contextTypes = {
-    subscribe: PropTypes.func.isRequired,
-    unsubscribe: PropTypes.func.isRequired
+    subscribeToNotifications: PropTypes.func.isRequired,
+    unsubscribeFromNotifications: PropTypes.func.isRequired
   };
 }

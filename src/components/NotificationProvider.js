@@ -44,8 +44,8 @@ export default class extends Component {
   getChildContext() {
     return {
       notify: this.notify,
-      subscribe: this.subscribe,
-      unsubscribe: this.unsubscribe,
+      subscribeToNotifications: this.subscribe,
+      unsubscribeFromNotifications: this.unsubscribe,
     };
   }
 
@@ -55,7 +55,7 @@ export default class extends Component {
 
   static childContextTypes = {
     notify: PropTypes.func,
-    subscribe: PropTypes.func,
-    unsubscribe: PropTypes.func
+    subscribeToNotifications: PropTypes.func,
+    unsubscribeFromNotifications: PropTypes.func
   };
 }
