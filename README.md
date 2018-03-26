@@ -3,7 +3,7 @@
 A mini project developed for BCG-DV as part of a Front End Developer interview challenge.
 
 Live demo URL:
-https://bcgdv-memo-board.firebaseapp.com
+<https://bcgdv-memo-board.firebaseapp.com>
 
 ## Install and run locally
 
@@ -12,9 +12,13 @@ npm install
 npm start
 ```
 
+The open the following URL in your browser:
+<http://localhost:3000>
+
 #### Run Unit Tests
 
 ```
+npm run build-css
 npm test
 ```
 
@@ -38,6 +42,12 @@ npm test
 * **RxJS** for notifications.
 * **Firestore SDK** for data persistence.
 * **Jest** and **Enzyme** for unit tests
+
+#### Development notes
+
+* This project was developed on `Windows` using `Node JS v8.9.4`.
+* Manual QA was done using `Chrome v65` and `Firefox v59` on `Windows`.
+* An issue was noticed when testing on `Microsoft Edge v41.16` (data doesn't load). The problem is due to a bug in the Firebase SDK and it's currently being fixed. Further details here: <https://github.com/firebase/firebase-js-sdk/issues/461>.
 
 ## About The Author
 
