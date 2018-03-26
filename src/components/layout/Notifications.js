@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Notification.css';
+import NotificationMessage from './NotificationMessage';
 
 export default class extends Component {
 
@@ -23,9 +24,10 @@ export default class extends Component {
 
   render() {
     return <div className={'notifications'}>
-      <div className={'message'}>
-        <p>Notification message that spreads over multiple line ... line 1 line 2 ... and much much much more ...</p>
-      </div>
+      <NotificationMessage
+        message={'Notifications message that spreads over multiple line ... line 1 line 2 ... and much much much more ...'}
+        messageType={'info'}
+      />
     </div>;
   }
 

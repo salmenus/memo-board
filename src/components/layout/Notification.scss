@@ -1,26 +1,7 @@
-@import "../../style/base/config";
-@import "../../style/layout/clamp-paragraph";
-
 .notifications {
   display: flex;
-  width: 100%;
+  flex-direction: column;
   position: absolute;
+  right: 0;
   z-index: 999;
-
-  > .message {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 3em;
-    width: 12em;
-    margin: 0.5em 0.5em 0 auto;
-    padding: 0.5em;
-    background-color: $notification-box-background;
-
-    &> p {
-      font-size: $font-size-small;
-      text-align: center;
-      @include clamp-paragraph($notification-box-max-lines, $notification-box-background)
-    }
-  }
 }

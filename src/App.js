@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Main from './components/layout/Main';
-import Notification from './components/layout/Notification';
+import Notifications from './components/layout/Notifications';
 import './App.css';
 import PropTypes from 'prop-types';
 import loadMemos from './data/loadMemos';
@@ -16,7 +16,7 @@ export default class extends Component {
   render() {
     return (
       <div className={'app'}>
-        <Notification />
+        <Notifications />
         <Header />
         <Main />
         <Footer />
