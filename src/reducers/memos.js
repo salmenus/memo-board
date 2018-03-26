@@ -13,7 +13,7 @@ export default (memos = null, action) => {
         if(memo.id !== updatedMemo.id) {
           return memo;
         } else {
-          return {...updatedMemo};
+          return {...memo, ...updatedMemo};
         }
       });
     }

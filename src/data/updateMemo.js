@@ -3,11 +3,15 @@ import '@firebase/firestore';
 
 export default async ({firebase = Firebase, store = null, memo}) => {
 
-  const newData = {
-    title: memo.title,
-    body: memo.body,
-    creation_date: memo.creationDate
-  };
+  const newData = {};
+
+  if(typeof memo.title === 'string') {
+    newData.title = memo.title;
+  }
+
+  if(typeof memo.body === 'string') {
+    newData.body = memo.body;
+  }
 
   // Simulates API call:
   // POST idea/update { “id”: “:id”, “title”: “:title”, “body”: “:body” }

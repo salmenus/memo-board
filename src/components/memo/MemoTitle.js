@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { t } from 'i18next';
 import updateMemo from './../../data/updateMemo';
 import PropTypes from 'prop-types';
 import MemoTitleLabel from './MemoTitleLabel';
@@ -32,8 +33,13 @@ export default class extends Component {
     if(newTitle !== this.form.inputInitialValue) {
       this.setState({title: newTitle});
 
-      updateMemo({store: this.context.store, memo: {...this.props.memo, title: newTitle}})
-        .catch((error) => this.setState({title: this.form.inputInitialValue}));
+      updateMemo({store: this.context.store, memo: {id: this.props.memo.id, title: newTitle}})
+        .then(() => this.context.notifier.notify(t('notification - memo title update')))
+        .catch((e) => {
+          console.dir(e);
+          this.setState({title: this.form.inputInitialValue});
+          this.context.notifier.notify(t('notification - memo title update error'), 'error');
+        });
     }
   }
 
@@ -73,6 +79,7 @@ export default class extends Component {
   }
 
   static contextTypes = {
-    store: PropTypes.object
+    store: PropTypes.object.isRequired,
+    notifier: PropTypes.object.isRequired
   };
 }

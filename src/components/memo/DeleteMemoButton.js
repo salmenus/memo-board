@@ -24,11 +24,10 @@ export default class extends Component {
       store: this.context.store,
       id: this.props.memo.id
     })
-      .then(() => {
-        this.context.notifier.notify(t('notification - memo deleted'));
-      })
+      .then(() => this.context.notifier.notify(t('notification - memo deleted')))
       .catch(() => {
         this.setState({isDeletingMemo: false});
+        this.context.notifier.notify(t('notification - memo delete error'), 'error');
         if(typeof this.props.onUpdateEnd === 'function') {
           this.props.onUpdateEnd();
         }

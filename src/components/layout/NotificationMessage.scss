@@ -14,6 +14,8 @@
   &> p {
     font-size: $font-size-small;
     text-align: center;
-    @include clamp-paragraph($notification-box-max-lines, $notification-box-background)
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $notification-box-max-lines;
   }
 }

@@ -4,6 +4,7 @@ import updateMemo from './../../data/updateMemo';
 import PropTypes from 'prop-types';
 import MemoBodyText from './MemoBodyText';
 import MemoBodyInput from './MemoBodyInput';
+import {t} from "i18next";
 
 export default class extends Component {
 
@@ -25,8 +26,12 @@ export default class extends Component {
     if(newBody !== this.form.inputInitialValue) {
       this.setState({body: newBody});
 
-      updateMemo({store: this.context.store, memo: {...this.props.memo, body: newBody}})
-        .catch(() => this.setState({body: this.form.inputInitialValue}));
+      updateMemo({store: this.context.store, memo: {id: this.props.memo.id, body: newBody}})
+        .then(() => this.context.notifier.notify(t('notification - memo body update')))
+        .catch(() => {
+          this.context.notifier.notify(t('notification - memo body update error'), 'error');
+          this.setState({body: this.form.inputInitialValue})
+        });
     }
   }
 
@@ -56,6 +61,7 @@ export default class extends Component {
   }
 
   static contextTypes = {
-    store: PropTypes.object
+    store: PropTypes.object.isRequired,
+    notifier: PropTypes.object.isRequired
   };
 }
