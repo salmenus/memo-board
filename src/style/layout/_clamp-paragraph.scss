@@ -3,17 +3,22 @@
   display: inline-block;
   overflow: hidden;
   position: relative;
+  text-overflow: ellipsis;
+  display: -webkit-box;
   -webkit-line-clamp: $max-lines;
-  max-height: (1.2 * $max-lines) * 1em;
 
-  &:after {
-    content: "";
-    text-align: right;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 30%;
-    height: 1.2em;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), $background-color 50%);
+  @supports not (-webkit-line-clamp: $max-lines) {
+
+    &:after {
+      content: "";
+      text-align: right;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 30%;
+      height: 1.2em;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), $background-color 50%);
+      max-height: (1.2 * $max-lines) * 1em;
+    }
   }
 }
