@@ -1,6 +1,7 @@
 .notifications {
   display: flex;
-  width: 12em;
+  width: 25%;
+  min-width: 10em;
   padding: 0.5em;
   flex-direction: column;
   position: absolute;

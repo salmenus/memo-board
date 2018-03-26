@@ -19,6 +19,9 @@ export default class extends Component {
     this.observable = Observable.create((observer) => {
       this.observer = observer;
     })
+      // Throttle to a maximum of 1 new notification every 2 seconds
+      // to avoid intrusive notifications and ensure better UX
+      .throttleTime(1000)
       .subscribe(ntofication => {
         for(const callback of this.callbacks) {
           callback(ntofication);
