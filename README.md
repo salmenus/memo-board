@@ -2,12 +2,14 @@
 
 A mini project developed for BCG-DV as part of a Front End Developer interview challenge.
 
-## Main Commands
+Live demo URL:
+https://bcgdv-memo-board.firebaseapp.com
 
-#### Install Dependencies
+## Install and run locally
 
 ```
 npm install
+npm start
 ```
 
 #### Run Unit Tests
@@ -16,17 +18,31 @@ npm install
 npm test
 ```
 
-#### Start The Dev Server
+## About the project
 
-```
-npm start
-```
+#### Features implemented
+
+* Loading and displaying memos in tiles.
+* Adding new memos.
+* Deleting memos.
+* Updating memo titles and bodies.
+* Sorting memos by creation date or by title.
+* Notifications system to notify about updates and errors.
+* Data persistence through Firebase - that simulates the backend RESET service described in the challenge document.
+* Responsive design.
+
+#### Technologies used
+
+* **ReactJS** and **Redux** for UI and data handling.
+* **SASS** for CSS pre-processing.
+* **RxJS** for notifications.
+* **Firestore SDK** for data persistence.
+* **Jest** and **Enzyme** for unit tests
 
 ## About The Author
 
-This project was developed by **Salmen Hichri**.
+This project was developed by Salmen Hichri.
 
-For any inquiry, questions, or comments, please contact `salmen.hichri@gmail.com`.
-
+* Email: `salmen.hichri@gmail.com`
 * GitHub profile: https://github.com/salmenus
 * LinkedIn profile: https://www.linkedin.com/in/hichri/
