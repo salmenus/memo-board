@@ -7,7 +7,7 @@ import initializeI18n from './utilities/initializeI18n';
 import reducers from './reducers/';
 import './style/main.css';
 import App from './App';
-import NotificationProvider from './components/NotificationProvider';
+import NotificationProvider from './providers/NotificationProvider';
 
 initializeFirebaseApp();
 initializeI18n();

@@ -4,12 +4,11 @@ import { Observable } from 'rxjs';
 
 export default class extends Component {
 
-  constructor(props) {
-    super(props);
-
+  constructor() {
+    super();
     this.callbacks = new Set();
-
     this.initializeObservable();
+
     this.notify = this.notify.bind(this);
     this.subscribe = this.subscribe.bind(this);
     this.unsubscribe = this.unsubscribe.bind(this);
