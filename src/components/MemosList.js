@@ -21,11 +21,13 @@ class Memos extends Component {
     return memo1.title.localeCompare(memo2.title);
   }
 
+  getMemosSortComparator() {
+    return this['sortBy' + this.state.sortKey[0].toUpperCase() + this.state.sortKey.slice(1)];
+  }
+
   getMemoTags() {
-    const sortMethod = (this.state.sortKey === 'date') ? this.sortByDate : this.sortByTitle;
-    console.dir(sortMethod);
     return this.props.memos
-      .sort(sortMethod)
+      .sort(this.getMemosSortComparator())
       .map(memo =>
         (<Memo key={memo.id} memo={memo}
              toggleEditingMode={memo.mostRecent && !memo.title && !memo.body} />)
