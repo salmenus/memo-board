@@ -1,7 +1,20 @@
 .notifications {
   display: flex;
+  width: 12em;
+  padding: 0.5em;
   flex-direction: column;
   position: absolute;
   right: 0;
   z-index: 999;
+}
+
+@media all and (max-width: 480px) {
+  .notifications {
+
+    width: 100%;
+
+    > :not(:first-child) {
+      display: none;
+    }
+  }
 }

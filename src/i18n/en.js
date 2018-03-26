@@ -7,7 +7,8 @@ const en = {
   'sort by - date': 'Date',
   'sort by - title': 'Title',
   'notification - new memo added': 'New memo added successfully',
-  'notification - new memo error': 'An error occurred while adding new memo'
+  'notification - new memo error': 'An error occurred while adding new memo',
+  'notification - memo deleted': 'Memo deleted successfully'
 };
 
 export default en;

@@ -24,6 +24,9 @@ export default class extends Component {
       store: this.context.store,
       id: this.props.memo.id
     })
+      .then(() => {
+        this.context.notifier.notify(t('notification - memo deleted'));
+      })
       .catch(() => {
         this.setState({isDeletingMemo: false});
         if(typeof this.props.onUpdateEnd === 'function') {
@@ -44,6 +47,7 @@ export default class extends Component {
   }
 
   static contextTypes = {
-    store: PropTypes.object
+    store: PropTypes.object.isRequired,
+    notifier: PropTypes.object.isRequired
   };
 }

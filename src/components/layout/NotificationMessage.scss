@@ -3,12 +3,12 @@
 
 .notification-message {
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
   height: 3em;
-  width: 12em;
-  margin: 0.5em 0.5em 0 auto;
   padding: 0.5em;
+  margin-bottom: 0.5em;
   background-color: $notification-box-background;
 
   &> p {
