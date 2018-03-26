@@ -9,7 +9,11 @@ jest.mock('i18next', () => ({
 jest.mock('@firebase/app', () => ({
   firestore: jest.fn().mockReturnValue({
     collection: jest.fn().mockReturnValue({
-      get: jest.fn(),
+      get: jest.fn().mockReturnValue({
+        docs: {
+          map: jest.fn()
+        }
+      }),
       add: jest.fn(),
       doc: jest.fn().mockReturnValue({
         update: jest.fn(),

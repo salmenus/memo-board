@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Memo from './memo/Memo';
-import './MemosList.css';
+import './Memos.css';
 import LoadingSpinner from './LoadingSpinner';
 import MemosSortOptions from './MemosSortOptions';
+import loadMemos from "../data/loadMemos";
+import PropTypes from "prop-types";
 
 class Memos extends Component {
 
@@ -11,6 +13,10 @@ class Memos extends Component {
     super();
     this.state = {sortKey: 'date'};
     this.updateSortKey = this.updateSortKey.bind(this);
+  }
+
+  componentDidMount() {
+    loadMemos({store: this.context.store});
   }
 
   static supportedSortKeys = ['date', 'title'];
@@ -54,6 +60,10 @@ class Memos extends Component {
         <div className={'memos'}>{memoTags}</div>
       </div>);
   }
+
+  static contextTypes = {
+    store: PropTypes.object
+  };
 }
 
 const mapStateToProps = state => ({
