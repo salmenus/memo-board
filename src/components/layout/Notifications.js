@@ -7,6 +7,10 @@ export default class extends Component {
 
   constructor() {
     super();
+    this.state = {
+      notifications: new Set()
+    };
+
     this.processNotification = this.processNotification.bind(this);
   }
 
@@ -18,17 +22,49 @@ export default class extends Component {
     this.context.notifier.unsubscribe(this.processNotification);
   }
 
+  static notificationDisplayDurationInMilliseconds = 3000;
+
   processNotification(notification) {
-    console.dir(notification);
+    if(notification && notification.message && notification.type) {
+      const newNotification = {
+        message: notification.message,
+        type: notification.type
+      };
+
+      this.setState({
+        notifications: new Set([newNotification, ...this.state.notifications])
+      });
+
+      this.autoDeleteNotification(notification);
+    }
+  }
+
+  autoDeleteNotification(notification) {
+    setTimeout(() => {
+      this.setState({
+        notifications: new Set([...this.state.notifications.delete(notification)])
+      });
+    }, this.constructor.notificationDisplayDurationInMilliseconds);
+  }
+
+  getNotificationsToDisplay() {
+    const result = [];
+    let index = 0;
+    for(const notification of this.state.notifications) {
+      result.push(
+        <NotificationMessage
+          key={index++}
+          message={notification.message}
+          type={notification.type}
+        />
+      );
+    }
+    return result;
   }
 
   render() {
-    return <div className={'notifications'}>
-      <NotificationMessage
-        message={'Notifications message that spreads over multiple line ... line 1 line 2 ... and much much much more ...'}
-        messageType={'info'}
-      />
-    </div>;
+    const notifications = this.getNotificationsToDisplay();
+    return <div className={'notifications'}>{notifications}</div>;
   }
 
   static contextTypes = {
