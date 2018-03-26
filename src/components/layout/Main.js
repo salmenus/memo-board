@@ -1,5 +1,5 @@
 import React from 'react';
-import Memos from '../MemosList';
+import Memos from '../Memos';
 import './Main.css';
 
 export default () => (

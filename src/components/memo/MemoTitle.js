@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { t } from 'i18next';
-import updateMemo from './../../data/updateMemo';
+import updateMemo from '../../dataHandlers/updateMemo';
 import PropTypes from 'prop-types';
 import MemoTitleLabel from './MemoTitleLabel';
 import MemoTitleInput from './MemoTitleInput';

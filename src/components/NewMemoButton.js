@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { t } from 'i18next';
 import './NewMemoButton.css'
-import createNewMemo from './../data/createNewMemo';
+import createNewMemo from '../dataHandlers/createNewMemo';
 
 export default class extends Component {
 

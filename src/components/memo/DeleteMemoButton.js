@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { t } from 'i18next';
 import './DeleteMemoButton.css';
-import deleteMemo from './../../data/deleteMemo';
+import deleteMemo from '../../dataHandlers/deleteMemo';
 import PropTypes from 'prop-types';
 
 export default class extends Component {

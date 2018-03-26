@@ -1,6 +1,6 @@
 import React from 'react';
 import Main from './Main';
-import Memos from '../MemosList';
+import Memos from '../Memos';
 import { shallow } from 'enzyme';
 
 it('inserts main wrapper with appropriate css tag', () => {

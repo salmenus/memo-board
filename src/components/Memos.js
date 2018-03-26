@@ -4,8 +4,8 @@ import Memo from './memo/Memo';
 import './Memos.css';
 import LoadingSpinner from './LoadingSpinner';
 import MemosSortOptions from './MemosSortOptions';
-import loadMemos from "../data/loadMemos";
-import PropTypes from "prop-types";
+import loadMemos from '../dataHandlers/loadMemos';
+import PropTypes from 'prop-types';
 
 class Memos extends Component {
 

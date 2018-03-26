@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './MemoBody.css'
-import updateMemo from './../../data/updateMemo';
+import updateMemo from '../../dataHandlers/updateMemo';
 import PropTypes from 'prop-types';
 import MemoBodyText from './MemoBodyText';
 import MemoBodyInput from './MemoBodyInput';
-import {t} from "i18next";
+import {t} from 'i18next';
 
 export default class extends Component {
 
