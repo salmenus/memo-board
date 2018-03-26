@@ -1,6 +1,6 @@
 import React from 'react';
 import { t } from 'i18next';
-import NewMemo from '../NewMemoButton';
+import NewMemoButton from '../NewMemoButton';
 import './Header.css';
 
 export default () => {
@@ -11,7 +11,7 @@ export default () => {
         <span>{t('app name')}</span>
         </h1>
       <div className={'actions'}>
-        <NewMemo />
+        <NewMemoButton />
       </div>
     </header>);
 };
