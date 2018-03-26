@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Memo from './memo/Memo';
 import './MemosList.css';
 import LoadingSpinner from './LoadingSpinner';
+import MemosSortOptions from './MemosSortOptions';
 
 class Memos extends Component {
 
@@ -19,7 +20,11 @@ class Memos extends Component {
     }
 
     const memoTags = this.getMemoTags();
-    return (<div className={'memos'}>{memoTags}</div>);
+    return (
+      <div>
+        <MemosSortOptions />
+        <div className={'memos'}>{memoTags}</div>
+      </div>);
   }
 }
 

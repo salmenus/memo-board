@@ -1,0 +1,10 @@
+@import "../style/base/config";
+
+.memos-sort-options {
+  display: flex;
+  height: 3em;
+  justify-content: center;
+  align-items: center;
+  background-color: $memos-sort-options-background;
+  color: $memos-sort-options-color;
+}
