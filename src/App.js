@@ -8,8 +8,22 @@ import loadMemos from './data/loadMemos';
 
 export default class extends Component {
 
-  componentWillMount() {
+  constructor() {
+    super();
+    this.notification = {
+      notify: (message, messageType) => {
+        console.log(message);
+        console.log(messageType);
+      }
+    };
+  }
+
+  componentDidMount() {
     loadMemos({store: this.context.store});
+  }
+
+  getChildContext() {
+    return {notify: this.notification.notify};
   }
 
   render() {
@@ -24,5 +38,9 @@ export default class extends Component {
 
   static contextTypes = {
     store: PropTypes.object
+  };
+
+  static childContextTypes = {
+    notify: PropTypes.func
   };
 }

@@ -18,8 +18,14 @@ export default class extends Component {
   createNewMemo() {
     this.setState({isCreatingNewMemo: true});
     createNewMemo({store: this.context.store})
-      .then(() => this.setState({isCreatingNewMemo: false}))
-      .catch(() => this.setState({isCreatingNewMemo: false}));
+      .then(() => {
+        this.setState({isCreatingNewMemo: false});
+        this.context.notify('NEW MEMO ADDED', 'success');
+      })
+      .catch(() => {
+        this.setState({isCreatingNewMemo: false});
+        this.context.notify('ERROR WHILE ADDING NOTIFICATIONS', 'error');
+      });
   }
 
   render() {
@@ -30,6 +36,7 @@ export default class extends Component {
   }
 
   static contextTypes = {
-    store: PropTypes.object
+    store: PropTypes.object.isRequired,
+    notify: PropTypes.func.isRequired
   };
 }
