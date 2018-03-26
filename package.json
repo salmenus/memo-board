@@ -23,7 +23,7 @@
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm-run-all build-css build-js",
-    "test": "react-scripts test --env=jsdom --coverage",
+    "test": "react-scripts test --env=jsdom --no-cache --coverage --collectCoverageFrom=src/**/*.js --collectCoverageFrom=!src/index.js",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
