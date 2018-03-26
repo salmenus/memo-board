@@ -1,10 +1,26 @@
 @import "../style/base/config";
+@import "../style/layout/flat-button";
 
 .memos-sort-options {
   display: flex;
-  height: 3em;
+  height: 4em;
   justify-content: center;
   align-items: center;
   background-color: $memos-sort-options-background;
   color: $memos-sort-options-color;
+
+  .sort-by-label {
+    padding: 0 0.5em;
+  }
+
+  .sort-options {
+    padding: 0.25em;
+    border: 3px solid transparent;
+    box-shadow: none;
+    outline: none;
+  }
+
+  .sort-options:focus {
+    border-color: $memos-sort-options-input-border-color;
+  }
 }

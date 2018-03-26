@@ -7,11 +7,35 @@ import MemosSortOptions from './MemosSortOptions';
 
 class Memos extends Component {
 
+  constructor() {
+    super();
+    this.state = {sortKey: 'date'};
+    this.updateSortKey = this.updateSortKey.bind(this);
+  }
+
+  sortByDate(memo1, memo2) {
+    return memo2.creationDate.getTime() - memo1.creationDate.getTime();
+  }
+
+  sortByTitle(memo1, memo2) {
+    return memo1.title.localeCompare(memo2.title);
+  }
+
   getMemoTags() {
-    return this.props.memos.map(memo =>
-      (<Memo key={memo.id} memo={memo}
+    const sortMethod = (this.state.sortKey === 'date') ? this.sortByDate : this.sortByTitle;
+    console.dir(sortMethod);
+    return this.props.memos
+      .sort(sortMethod)
+      .map(memo =>
+        (<Memo key={memo.id} memo={memo}
              toggleEditingMode={memo.mostRecent && !memo.title && !memo.body} />)
     );
+  }
+
+  updateSortKey(newKey) {
+    if(['date', 'title'].indexOf(newKey) > -1) {
+      this.setState({sortKey: newKey});
+    }
   }
 
   render() {
@@ -22,7 +46,7 @@ class Memos extends Component {
     const memoTags = this.getMemoTags();
     return (
       <div>
-        <MemosSortOptions />
+        <MemosSortOptions onSortKeyUpdated={this.updateSortKey} />
         <div className={'memos'}>{memoTags}</div>
       </div>);
   }

@@ -20,9 +20,7 @@ export default (memos = null, action) => {
 
     case 'UPDATE_MEMOS': {
       let result = Array.isArray(action.memos) ? [...action.memos] : [];
-      return result
-        .filter(memo => memo.id && memo.creationDate instanceof Date)
-        .sort((memo1, memo2) => memo2.creationDate.getTime() - memo1.creationDate.getTime());
+      return result.filter(memo => memo.id && memo.creationDate instanceof Date);
     }
 
     case 'DELETE_MEMO': {
