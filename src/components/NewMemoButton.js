@@ -20,11 +20,11 @@ export default class extends Component {
     createNewMemo({store: this.context.store})
       .then(() => {
         this.setState({isCreatingNewMemo: false});
-        this.context.notifier.notify('NEW MEMO ADDED', 'success');
+        this.context.notifier.notify(t('notification - new memo added'));
       })
       .catch(() => {
         this.setState({isCreatingNewMemo: false});
-        this.context.notifier.notify('ERROR WHILE ADDING NOTIFICATIONS', 'error');
+        this.context.notifier.notify(t('notification - new memo error'), 'error');
       });
   }
 

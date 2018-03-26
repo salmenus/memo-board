@@ -35,16 +35,17 @@ export default class extends Component {
         notifications: new Set([newNotification, ...this.state.notifications])
       });
 
-      this.autoDeleteNotification(notification);
+      this.autoDeleteNotification(newNotification);
     }
   }
 
+  deleteNotification(notification) {
+    this.state.notifications.delete(notification);
+    this.setState({notifications: new Set([...this.state.notifications])});
+  }
+
   autoDeleteNotification(notification) {
-    setTimeout(() => {
-      this.setState({
-        notifications: new Set([...this.state.notifications.delete(notification)])
-      });
-    }, this.constructor.notificationDisplayDurationInMilliseconds);
+    setTimeout(() => this.deleteNotification(notification), this.constructor.notificationDisplayDurationInMilliseconds);
   }
 
   getNotificationsToDisplay() {

@@ -5,7 +5,9 @@ const en = {
   'delete memo': 'Delete',
   'sort memos by': 'Sort by',
   'sort by - date': 'Date',
-  'sort by - title': 'Title'
+  'sort by - title': 'Title',
+  'notification - new memo added': 'New memo added successfully',
+  'notification - new memo error': 'An error occurred while adding new memo'
 };
 
 export default en;
