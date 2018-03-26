@@ -1,0 +1,10 @@
+@import "../../style/base/config";
+@import "../../style/layout/flat-input";
+
+.memo-title-input {
+  @include flat-input;
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  color: $memo-input-color;
+}

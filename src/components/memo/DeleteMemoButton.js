@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
 import { t } from 'i18next';
-import './DeleteMemoButton.css'
+import './DeleteMemoButton.css';
 import deleteMemo from './../../data/deleteMemo';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-class DeleteMemoButton extends Component {
+export default class extends Component {
 
   constructor() {
     super();
-    this.state = {
-      isDeletingMemo: false
-    };
+    this.state = {isDeletingMemo: false};
+    this.delete = this.delete.bind(this);
   }
 
-  delete = () => {
+  delete() {
 
     this.setState({isDeletingMemo: true});
 
@@ -48,5 +47,3 @@ class DeleteMemoButton extends Component {
     store: PropTypes.object
   };
 }
-
-export default DeleteMemoButton;

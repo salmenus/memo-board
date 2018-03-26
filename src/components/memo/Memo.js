@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
-import './Memo.css'
-import MemoBar from "./MemoBar";
-import MemoBody from "./MemoBody"
+import './Memo.css';
+import MemoBar from './MemoBar';
+import MemoBody from './MemoBody';
 
-class Memo extends Component {
+export default class extends Component {
 
   constructor() {
     super();
-
     this.state = {
       updating: false
     };
+    this.onUpdateStart = this.onUpdateStart.bind(this);
+    this.onUpdateEnd = this.onUpdateEnd.bind(this);
   }
 
-  onUpdateStart = () => {
+  onUpdateStart() {
     this.setState({updating: true});
   };
 
-  onUpdateEnd = () => {
+  onUpdateEnd() {
     this.setState({updating: false});
   };
 
@@ -33,5 +34,3 @@ class Memo extends Component {
     );
   }
 }
-
-export default Memo;

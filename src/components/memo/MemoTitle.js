@@ -1,97 +1,78 @@
 import React, { Component } from 'react';
-import './MemoTitle.css';
 import updateMemo from './../../data/updateMemo';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
+import MemoTitleLabel from './MemoTitleLabel';
+import MemoTitleInput from './MemoTitleInput';
+import './MemoTitle.css';
 
-class MemoTitle extends Component {
+export default class extends Component {
 
   constructor(props) {
     super(props);
+    this.form = {input: null};
     this.state = {
       title: props.memo.title,
       editing: false
     };
 
-    this.form = {
-      input: null
-    };
+    this.toggleEditingMode = this.toggleEditingMode.bind(this);
+    this.startEditing = this.startEditing.bind(this);
+    this.endEditing = this.endEditing.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   componentDidMount() {
-    if(this.props.toggleEditingMode === true) {
+    if(this.props.toggleEditingMode) {
       this.toggleEditingMode();
     }
   }
 
-  updateTitle = () => {
-
-    // Check that title has changed before starting update
+  updateTitle() {
     const newTitle = this.form.input.value;
-    if(newTitle === this.form.inputInitialValue) {
-      return;
+    if(newTitle !== this.form.inputInitialValue) {
+      this.setState({title: newTitle});
+
+      updateMemo({store: this.context.store, memo: {...this.props.memo, title: newTitle}})
+        .catch((error) => this.setState({title: this.form.inputInitialValue}));
     }
+  }
 
-    this.setState({title: newTitle});
-
-    updateMemo({
-      store: this.context.store,
-      memo: {...this.props.memo, title: newTitle}})
-      // Reset old title in case of failure to update
-      .catch((error) => this.setState({title: this.form.inputInitialValue}));
-  };
-
-  toggleEditingMode = () => {
-    if(this.state.editing === false) {
+  toggleEditingMode() {
+    if(!this.state.editing) {
       this.setState({editing: true});
     }
-  };
+  }
 
-  startEditing = (input) => {
-    if(input !== null) {
+  startEditing(input)  {
+    if(input) {
       this.form.input = input;
       this.form.inputInitialValue = input.value;
       input.focus();
     }
-  };
+  }
 
-  endEditing = () => {
+  endEditing() {
     this.setState({editing: false});
     this.updateTitle();
-  };
+  }
 
-  handleKeyPress = (event) => {
+  handleKeyPress(event) {
     if (event && event.key === 'Enter' && this.form.input) {
       this.form.input.blur();
     }
-  };
+  }
 
   render() {
-
-    if(this.state.editing === false) {
-      return <div
-        className={'memo-title'}
-        tabIndex={0}
-        onFocus={this.toggleEditingMode}
-        onClick={this.toggleEditingMode}>
-        <span className={'memo-title-text'} title={this.state.title}>{this.state.title}</span>
-      </div>;
-    }
-
-    return <div className={'memo-title editing'}>
-      <input className={'memo-title-input'}
-        defaultValue={this.state.title}
-        onBlur={this.endEditing}
-        onKeyPress={this.handleKeyPress}
-        ref={this.startEditing}
-        maxLength={140}
-      />
-
-    </div>
+    return (this.state.editing) ?
+      (<MemoTitleInput title={this.state.title}
+                      startEditing={this.startEditing}
+                      endEditing={this.endEditing}
+                      handleKeyPress={this.handleKeyPress} />) :
+      (<MemoTitleLabel title={this.state.title}
+                      toggleEditingMode={this.toggleEditingMode} />);
   }
 
   static contextTypes = {
     store: PropTypes.object
   };
 }
-
-export default MemoTitle;

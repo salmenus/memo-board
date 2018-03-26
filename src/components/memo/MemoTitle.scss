@@ -21,18 +21,3 @@
     color: $memo-input-hover-color;
   }
 }
-
-.memo-title-text {
-  overflow: hidden;
-  width: 100%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.memo-title-input {
-  @include flat-input;
-  text-align: left;
-  width: 100%;
-  height: 100%;
-  color: $memo-input-color;
-}

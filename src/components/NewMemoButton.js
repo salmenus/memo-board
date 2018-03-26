@@ -4,7 +4,7 @@ import { t } from 'i18next';
 import './NewMemoButton.css'
 import createNewMemo from './../data/createNewMemo';
 
-class NewMemo extends Component {
+export default class extends Component {
 
   constructor() {
     super();
@@ -23,15 +23,13 @@ class NewMemo extends Component {
   }
 
   render() {
-    return <button
+    return (<button
       className={'new-memo-button'}
       onClick={this.createNewMemo}
-      disabled={this.state.isCreatingNewMemo}>{ t('create new memo') }</button>
+      disabled={this.state.isCreatingNewMemo}>{ t('create new memo') }</button>);
   }
 
   static contextTypes = {
     store: PropTypes.object
   };
 }
-
-export default NewMemo;

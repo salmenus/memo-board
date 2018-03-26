@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
-import Main from "./components/layout/Main";
+import Main from './components/layout/Main';
 import './App.css';
-import PropTypes from "prop-types";
-import loadMemos from "./data/loadMemos";
+import PropTypes from 'prop-types';
+import loadMemos from './data/loadMemos';
 
-class App extends Component {
+export default class extends Component {
 
   componentWillMount() {
     loadMemos({store: this.context.store});
@@ -26,5 +26,3 @@ class App extends Component {
     store: PropTypes.object
   };
 }
-
-export default App;

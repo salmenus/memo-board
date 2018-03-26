@@ -1,0 +1,9 @@
+@import "../../style/base/config";
+@import "../../style/layout/clamp-paragraph";
+
+.memo-body-text {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  @include clamp-paragraph($memo-body-max-lines, $memo-tile-background-color)
+}

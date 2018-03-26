@@ -1,87 +1,61 @@
 import React, { Component } from 'react';
 import './MemoBody.css'
 import updateMemo from './../../data/updateMemo';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
+import MemoBodyText from './MemoBodyText';
+import MemoBodyInput from './MemoBodyInput';
 
-class MemoBody extends Component {
+export default class extends Component {
 
   constructor(props) {
     super(props);
+    this.form = {input: null};
     this.state = {
       body: props.memo.body,
       editing: false
     };
 
-    this.form = {
-      input: null
-    };
+    this.startEditing = this.startEditing.bind(this);
+    this.endEditing = this.endEditing.bind(this);
+    this.toggleEditingMode = this.toggleEditingMode.bind(this);
   }
 
-  updateBody = () => {
-
-    // Check that body has changed before starting update
+  updateBody() {
     const newBody = this.form.input.value;
-    if(newBody === this.form.inputInitialValue) {
-      return;
+    if(newBody !== this.form.inputInitialValue) {
+      this.setState({body: newBody});
+
+      updateMemo({store: this.context.store, memo: {...this.props.memo, body: newBody}})
+        .catch(() => this.setState({body: this.form.inputInitialValue}));
     }
+  }
 
-    this.setState({body: newBody});
-
-    updateMemo({
-      store: this.context.store,
-      memo: {...this.props.memo, body: newBody}})
-    // Reset old body in case of failure to update
-      .catch(() => this.setState({body: this.form.inputInitialValue}));
-  };
-
-  toggleEditingMode = () => {
-    if(this.state.editing === false) {
+  toggleEditingMode() {
+    if(!this.state.editing) {
       this.setState({editing: true});
     }
-  };
+  }
 
-  startEditing = (input) => {
-    if(input !== null) {
+  startEditing(input) {
+    if(input) {
       this.form.input = input;
       this.form.inputInitialValue = input.value;
       input.focus();
     }
-  };
+  }
 
-  endEditing = () => {
+  endEditing() {
     this.setState({editing: false});
     this.updateBody();
-  };
+  }
 
   render() {
-
-    if(this.state.editing === false) {
-      return (
-        <div
-          className={'memo-body'}
-          tabIndex={0}
-          title={this.state.body}
-          onFocus={this.toggleEditingMode}
-          onClick={this.toggleEditingMode}>
-          <p className={'memo-body-text'}>{this.state.body}</p>
-        </div>
-      );
-    }
-
-    return <div className={'memo-body editing'}>
-      <textarea className={'memo-body-input'}
-        defaultValue={this.state.body}
-        onBlur={this.endEditing}
-        ref={this.startEditing}
-        maxLength={140}
-      />
-
-    </div>;
+    return (this.state.editing) ?
+      (<MemoBodyInput body={this.state.body} startEditing={this.startEditing} endEditing={this.endEditing} />):
+      (<MemoBodyText body={this.state.body} toggleEditingMode={this.toggleEditingMode} />);
   }
 
   static contextTypes = {
     store: PropTypes.object
   };
 }
-
-export default MemoBody;
