@@ -1,0 +1,10 @@
+.notifications {
+  display: flex;
+  justify-content: right;
+  height: 2em;
+  width: 100%;
+  position: absolute;
+  z-index: 999;
+
+  background-color: red;
+}
