@@ -7,6 +7,7 @@ import initializeI18n from './utilities/initializeI18n';
 import reducers from './reducers/';
 import './style/main.css';
 import App from './App';
+import Notifier from './components/Notifier';
 
 initializeFirebaseApp();
 initializeI18n();
@@ -15,7 +16,9 @@ const store = createStore(reducers);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Notifier>
+      <App />
+    </Notifier>
   </Provider>,
   document.getElementById('root')
 );
