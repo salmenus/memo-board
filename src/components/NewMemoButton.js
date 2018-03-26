@@ -20,11 +20,11 @@ export default class extends Component {
     createNewMemo({store: this.context.store})
       .then(() => {
         this.setState({isCreatingNewMemo: false});
-        this.context.notify('NEW MEMO ADDED', 'success');
+        this.context.notifier.notify('NEW MEMO ADDED', 'success');
       })
       .catch(() => {
         this.setState({isCreatingNewMemo: false});
-        this.context.notify('ERROR WHILE ADDING NOTIFICATIONS', 'error');
+        this.context.notifier.notify('ERROR WHILE ADDING NOTIFICATIONS', 'error');
       });
   }
 
@@ -37,6 +37,6 @@ export default class extends Component {
 
   static contextTypes = {
     store: PropTypes.object.isRequired,
-    notify: PropTypes.func.isRequired
+    notifier: PropTypes.object.isRequired
   };
 }
