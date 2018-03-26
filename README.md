@@ -41,7 +41,7 @@ npm test
 * **SASS** for CSS pre-processing.
 * **RxJS** for notifications.
 * **Firestore SDK** for data persistence.
-* **Jest** and **Enzyme** for unit tests
+* **Jest** and **Enzyme** for unit tests.
 
 #### Development notes
 
@@ -53,6 +53,6 @@ npm test
 
 This project was developed by Salmen Hichri.
 
-* Email: `salmen.hichri@gmail.com`
-* GitHub profile: https://github.com/salmenus
-* LinkedIn profile: https://www.linkedin.com/in/hichri/
+* Email: `salmen.hichri@gmail.com`.
+* GitHub profile: <https://github.com/salmenus>.
+* LinkedIn profile: <https://www.linkedin.com/in/hichri>.
