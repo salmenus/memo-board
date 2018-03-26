@@ -13,16 +13,18 @@ class Memos extends Component {
     this.updateSortKey = this.updateSortKey.bind(this);
   }
 
-  sortByDate(memo1, memo2) {
+  static supportedSortKeys = ['date', 'title'];
+
+  static sortByDate(memo1, memo2) {
     return memo2.creationDate.getTime() - memo1.creationDate.getTime();
   }
 
-  sortByTitle(memo1, memo2) {
+  static sortByTitle(memo1, memo2) {
     return memo1.title.localeCompare(memo2.title);
   }
 
   getMemosSortComparator() {
-    return this['sortBy' + this.state.sortKey[0].toUpperCase() + this.state.sortKey.slice(1)];
+    return this.constructor['sortBy' + this.state.sortKey[0].toUpperCase() + this.state.sortKey.slice(1)];
   }
 
   getMemoTags() {
@@ -35,7 +37,7 @@ class Memos extends Component {
   }
 
   updateSortKey(newKey) {
-    if(['date', 'title'].indexOf(newKey) > -1) {
+    if(this.constructor.supportedSortKeys.indexOf(newKey) > -1) {
       this.setState({sortKey: newKey});
     }
   }
