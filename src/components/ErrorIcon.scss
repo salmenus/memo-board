@@ -1,0 +1,16 @@
+@import "../style/base/config";
+@import "../style/layout/icon";
+
+.error-icon {
+
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+
+  .icon {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    background: icon('error', $error-icon-color ) no-repeat center center;
+  }
+}

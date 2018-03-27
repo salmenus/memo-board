@@ -33,4 +33,7 @@ $contrast-font-color: #f0f0f0 !default;
 $contrast-font-family: 'Amatic SC', cursive !default;
 
 // Loading spinner
-$loading-spinner-color: $red-light;
+$loading-spinner-color: $red-light !default;
+
+// Error icon color
+$error-icon-color: $red-light !default;

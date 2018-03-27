@@ -4,6 +4,7 @@ import { t } from 'i18next';
 import Memo from './memo/Memo';
 import './Memos.css';
 import LoadingSpinner from './LoadingSpinner';
+import ErrorIcon from './ErrorIcon';
 import MemosSortOptions from './MemosSortOptions';
 import loadMemos from '../dataHandlers/loadMemos';
 import PropTypes from 'prop-types';
@@ -56,7 +57,7 @@ class Memos extends Component {
   render() {
 
     if(this.state.memosLoadingState === 'error') {
-      return null;
+      return <ErrorIcon />;
     }
 
     if(!Array.isArray(this.props.memos)) {

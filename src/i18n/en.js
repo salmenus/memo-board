@@ -6,6 +6,7 @@ const en = {
   'sort memos by': 'Sort by',
   'sort by - date': 'Date',
   'sort by - title': 'Title',
+  'notification - memos loading error': 'An error occurred while loading memos',
   'notification - new memo added': 'New memo added successfully',
   'notification - new memo error': 'An error occurred while adding new memo',
   'notification - memo deleted': 'Memo deleted successfully',
