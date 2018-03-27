@@ -12,7 +12,7 @@ class Memos extends Component {
   constructor() {
     super();
     this.state = {sortKey: 'date'};
-    this.updateSortKey = this.updateSortKey.bind(this);
+    this.handleSortKeyUpdated = this.handleSortKeyUpdated.bind(this);
   }
 
   componentDidMount() {
@@ -42,7 +42,7 @@ class Memos extends Component {
     );
   }
 
-  updateSortKey(newKey) {
+  handleSortKeyUpdated(newKey) {
     if(this.constructor.supportedSortKeys.indexOf(newKey) > -1) {
       this.setState({sortKey: newKey});
     }
@@ -56,7 +56,7 @@ class Memos extends Component {
     const memoTags = this.getMemoTags();
     return (
       <div>
-        <MemosSortOptions onSortKeyUpdated={this.updateSortKey} />
+        <MemosSortOptions onSortKeyUpdated={this.handleSortKeyUpdated} />
         <div className={'memos'}>{memoTags}</div>
       </div>);
   }

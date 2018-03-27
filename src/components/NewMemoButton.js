@@ -12,7 +12,7 @@ export default class extends Component {
       isCreatingNewMemo: false
     };
 
-    this.createNewMemo = this.createNewMemo.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   createNewMemo() {
@@ -28,10 +28,14 @@ export default class extends Component {
       });
   }
 
+  handleClick() {
+    this.createNewMemo();
+  }
+
   render() {
     return (<button
       className={'new-memo-button'}
-      onClick={this.createNewMemo}
+      onClick={this.handleClick}
       disabled={this.state.isCreatingNewMemo}>{ t('create new memo') }</button>);
   }
 
