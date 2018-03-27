@@ -12,7 +12,12 @@ import NotificationProvider from './providers/NotificationProvider';
 initializeFirebaseApp();
 initializeI18n();
 
-const store = createStore(reducers);
+const createStoreParams = [reducers];
+if(process.env.NODE_ENV === 'development' && process.env.REACT_APP_DEBUG_REDUX === 'true') {
+  createStoreParams.push(window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+}
+
+const store = createStore(...createStoreParams);
 
 ReactDOM.render(
   <StoreProvider store={store}>
