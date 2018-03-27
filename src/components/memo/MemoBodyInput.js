@@ -1,7 +1,7 @@
 import React from 'react';
 import './MemoBodyInput.css';
 
-export default (props) => (
+const MemoBodyInput = (props) => (
   <div className={'memo-body editing'}>
       <textarea className={'memo-body-input'}
                 defaultValue={props.body}
@@ -11,3 +11,5 @@ export default (props) => (
       />
   </div>
 );
+
+export default MemoBodyInput;

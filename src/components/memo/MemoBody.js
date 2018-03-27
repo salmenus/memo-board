@@ -6,7 +6,7 @@ import MemoBodyText from './MemoBodyText';
 import MemoBodyInput from './MemoBodyInput';
 import {t} from 'i18next';
 
-export default class extends Component {
+class MemoBody extends Component {
 
   constructor(props) {
     super(props);
@@ -77,3 +77,5 @@ export default class extends Component {
     notifier: PropTypes.object.isRequired
   };
 }
+
+export default MemoBody;

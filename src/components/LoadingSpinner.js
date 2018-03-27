@@ -1,9 +1,11 @@
 import React from 'react';
 import './LoadingSpinner.css'
 
-export default () => (
+const LoadingSpinner = () => (
   <div className={'loading-spinner'}>
     <div className={'dot-1'} />
     <div className={'dot-2'} />
   </div>
 );
+
+export default LoadingSpinner;

@@ -2,8 +2,10 @@ import React from 'react';
 import Memos from '../Memos';
 import './Main.css';
 
-export default () => (
+const Main = () => (
   <main className={'main'}>
     <Memos />
   </main>
 );
+
+export default Main;

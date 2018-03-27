@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './Notification.css';
 import NotificationMessage from './NotificationMessage';
 
-export default class extends Component {
+class Notifications extends Component {
 
   constructor() {
     super();
@@ -72,3 +72,5 @@ export default class extends Component {
     notifier: PropTypes.object.isRequired
   };
 }
+
+export default Notifications;

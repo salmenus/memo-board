@@ -2,7 +2,7 @@ import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Observable } from 'rxjs';
 
-export default class extends Component {
+class NotificationProvider extends Component {
 
   constructor() {
     super();
@@ -63,3 +63,5 @@ export default class extends Component {
     notifier: PropTypes.object
   };
 }
+
+export default NotificationProvider;

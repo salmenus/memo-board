@@ -3,7 +3,7 @@ import './Memo.css';
 import MemoBar from './MemoBar';
 import MemoBody from './MemoBody';
 
-export default class extends Component {
+class Memo extends Component {
 
   constructor() {
     super();
@@ -34,3 +34,5 @@ export default class extends Component {
     );
   }
 }
+
+export default Memo;

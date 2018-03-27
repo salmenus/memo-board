@@ -6,7 +6,7 @@ import MemoTitleLabel from './MemoTitleLabel';
 import MemoTitleInput from './MemoTitleInput';
 import './MemoTitle.css';
 
-export default class extends Component {
+class MemoTitle extends Component {
 
   constructor(props) {
     super(props);
@@ -92,3 +92,5 @@ export default class extends Component {
     notifier: PropTypes.object.isRequired
   };
 }
+
+export default MemoTitle;

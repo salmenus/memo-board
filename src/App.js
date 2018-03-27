@@ -5,7 +5,7 @@ import Main from './components/layout/Main';
 import Notifications from './components/layout/Notifications';
 import './App.css';
 
-export default () => (
+const App = () => (
   <div className={'app'}>
     <Notifications />
     <Header />
@@ -13,3 +13,5 @@ export default () => (
     <Footer />
   </div>
 );
+
+export default App;

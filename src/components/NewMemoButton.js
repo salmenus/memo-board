@@ -4,7 +4,7 @@ import { t } from 'i18next';
 import './NewMemoButton.css'
 import createNewMemo from '../dataHandlers/createNewMemo';
 
-export default class extends Component {
+class NewMemoButton extends Component {
 
   constructor() {
     super();
@@ -39,3 +39,5 @@ export default class extends Component {
     notifier: PropTypes.object.isRequired
   };
 }
+
+export default NewMemoButton;

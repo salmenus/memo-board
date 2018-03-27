@@ -3,7 +3,7 @@ import './MemoBar.css';
 import MemoTitle from './MemoTitle';
 import DeleteMemoButton from './DeleteMemoButton';
 
-export default (props) => (
+const MemoBar = (props) => (
   <div className={'memo-bar'}>
     <MemoTitle
       memo={props.memo}
@@ -14,3 +14,5 @@ export default (props) => (
       onUpdateEnd={props.onUpdateEnd}/>
   </div>
 );
+
+export default MemoBar;

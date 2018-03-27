@@ -1,7 +1,7 @@
 import React from 'react';
 import './MemoTitleInput.css';
 
-export default (props) => (
+const MemoTitleInput = (props) => (
   <div className={'memo-title editing'}>
     <input className={'memo-title-input'}
            defaultValue={props.title}
@@ -12,3 +12,5 @@ export default (props) => (
     />
   </div>
 );
+
+export default MemoTitleInput;

@@ -3,7 +3,7 @@ import { t } from 'i18next';
 import NewMemoButton from '../NewMemoButton';
 import './Header.css';
 
-export default () => {
+const Header = () => {
   return (
     <header className={'header'}>
       <h1 className={'title'}>
@@ -15,3 +15,5 @@ export default () => {
       </div>
     </header>);
 };
+
+export default Header;

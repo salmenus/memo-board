@@ -1,7 +1,7 @@
 import React from 'react';
 import './MemoBodyText.css';
 
-export default (props) => (<div
+const MemoBodyText = (props) => (<div
   className={'memo-body'}
   tabIndex={0}
   title={props.body}
@@ -9,3 +9,5 @@ export default (props) => (<div
   onClick={props.onClick}>
   <p className={'memo-body-text'}>{props.body}</p>
 </div>);
+
+export default MemoBodyText;

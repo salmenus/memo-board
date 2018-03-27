@@ -4,7 +4,7 @@ import './DeleteMemoButton.css';
 import deleteMemo from '../../dataHandlers/deleteMemo';
 import PropTypes from 'prop-types';
 
-export default class extends Component {
+class DeleteMemoButton extends Component {
 
   constructor() {
     super();
@@ -54,3 +54,5 @@ export default class extends Component {
     notifier: PropTypes.object.isRequired
   };
 }
+
+export default DeleteMemoButton;

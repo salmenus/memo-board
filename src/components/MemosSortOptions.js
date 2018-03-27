@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { t } from 'i18next';
 import './MemosSortOptions.css';
 
-export default class extends Component {
+class MemosSortOptions extends Component {
 
   constructor() {
     super();
@@ -25,3 +25,5 @@ export default class extends Component {
     </div>);
   }
 }
+
+export default MemosSortOptions;

@@ -1,7 +1,7 @@
 import React from 'react';
 import './MemoTitleLabel.css';
 
-export default (props) => (
+const MemoTitleLabel = (props) => (
   <div
     className={'memo-title'}
     tabIndex={0}
@@ -10,3 +10,5 @@ export default (props) => (
     <span className={'memo-title-text'} title={props.title}>{props.title}</span>
   </div>
 );
+
+export default MemoTitleLabel;

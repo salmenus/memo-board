@@ -2,9 +2,11 @@ import React from 'react';
 import { t } from 'i18next';
 import './Footer.css';
 
-export default () => {
+const Footer = () => {
   return (
     <footer className={'footer'}>
       <span>{t('footer message')}</span>
     </footer>);
 };
+
+export default Footer;
