@@ -35,8 +35,7 @@ export default class extends Component {
       updateMemo({store: this.context.store, memo: {id: this.props.memo.id, title: newTitle}})
         .then(() => this.context.notifier.notify(t('notification - memo title update')))
         .catch((e) => {
-          console.dir(e);
-          this.setState({title: this.form.inputInitialValue});
+          this.setState({title: this.initialTitleValue});
           this.context.notifier.notify(t('notification - memo title update error'), 'error');
         });
     }

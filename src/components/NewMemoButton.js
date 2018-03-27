@@ -18,14 +18,9 @@ export default class extends Component {
   createNewMemo() {
     this.setState({isCreatingNewMemo: true});
     createNewMemo({store: this.context.store})
-      .then(() => {
-        this.setState({isCreatingNewMemo: false});
-        this.context.notifier.notify(t('notification - new memo added'));
-      })
-      .catch(() => {
-        this.setState({isCreatingNewMemo: false});
-        this.context.notifier.notify(t('notification - new memo error'), 'error');
-      });
+      .then(() => this.context.notifier.notify(t('notification - new memo added')))
+      .catch(() => this.context.notifier.notify(t('notification - new memo error'), 'error'))
+      .finally(() => this.setState({isCreatingNewMemo: false}))
   }
 
   handleClick() {

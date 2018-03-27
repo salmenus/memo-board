@@ -9,7 +9,7 @@ export default class extends Component {
   constructor() {
     super();
     this.state = {isDeletingMemo: false};
-    this.delete = this.delete.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   delete() {
@@ -34,13 +34,17 @@ export default class extends Component {
       });
   };
 
+  handleClick() {
+    this.delete();
+  }
+
   render() {
     return (
       <button
         className={'memo-delete-button'}
         title={t('delete memo')}
         disabled={this.state.isDeletingMemo}
-        onClick={this.delete}
+        onClick={this.handleClick}
       >{t('delete memo')}</button>
     );
   }

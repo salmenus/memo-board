@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { t } from 'i18next';
 import Memo from './memo/Memo';
 import './Memos.css';
 import LoadingSpinner from './LoadingSpinner';
@@ -11,12 +12,16 @@ class Memos extends Component {
 
   constructor() {
     super();
-    this.state = {sortKey: 'date'};
+    this.state = {sortKey: 'date', memosLoadingState: 'loading'};
     this.handleSortKeyUpdated = this.handleSortKeyUpdated.bind(this);
   }
 
   componentDidMount() {
-    loadMemos({store: this.context.store});
+    loadMemos({store: this.context.store})
+      .catch(() => {
+        this.context.notifier.notify(t('notification - memos loading error'), 'error');
+        this.setState({memosLoadingState: 'error'});
+      });
   }
 
   static supportedSortKeys = ['date', 'title'];
@@ -49,6 +54,11 @@ class Memos extends Component {
   }
 
   render() {
+
+    if(this.state.memosLoadingState === 'error') {
+      return null;
+    }
+
     if(!Array.isArray(this.props.memos)) {
       return <LoadingSpinner />;
     }
@@ -62,7 +72,8 @@ class Memos extends Component {
   }
 
   static contextTypes = {
-    store: PropTypes.object
+    store: PropTypes.object.isRequired,
+    notifier: PropTypes.object.isRequired
   };
 }
 
