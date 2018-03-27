@@ -66,7 +66,7 @@ class Memos extends Component {
 
     const memoTags = this.getMemoTags();
     return (
-      <div>
+      <div className={'memos-container'}>
         <MemosSortOptions onSortKeyUpdated={this.handleSortKeyUpdated} />
         <div className={'memos'}>{memoTags}</div>
       </div>);

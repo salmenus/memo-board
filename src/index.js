@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import { Provider as StoreProvider } from 'react-redux';
 import { createStore } from 'redux';
 import initializeFirebaseApp from './utilities/initializeFirebaseApp';
 import initializeI18n from './utilities/initializeI18n';
@@ -15,10 +15,10 @@ initializeI18n();
 const store = createStore(reducers);
 
 ReactDOM.render(
-  <Provider store={store}>
+  <StoreProvider store={store}>
     <NotificationProvider>
       <App />
     </NotificationProvider>
-  </Provider>,
+  </StoreProvider>,
   document.getElementById('root')
 );
