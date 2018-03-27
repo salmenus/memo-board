@@ -5,8 +5,8 @@ export default (props) => (
   <div className={'memo-title editing'}>
     <input className={'memo-title-input'}
            defaultValue={props.title}
-           ref={props.startEditing}
-           onBlur={props.endEditing}
+           ref={props.onRefUpdate}
+           onBlur={props.onBlur}
            onKeyPress={props.handleKeyPress}
            maxLength={140}
     />

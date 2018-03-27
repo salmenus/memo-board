@@ -10,16 +10,16 @@ export default class extends Component {
 
   constructor(props) {
     super(props);
-    this.form = {input: null};
     this.state = {
       title: props.memo.title,
       editing: false
     };
 
-    this.toggleEditingMode = this.toggleEditingMode.bind(this);
-    this.startEditing = this.startEditing.bind(this);
-    this.endEditing = this.endEditing.bind(this);
-    this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.initialTitleValue = null;
+    this.handleTitleLabelClick = this.handleTitleLabelClick.bind(this);
+    this.handleInputRefUpdate = this.handleInputRefUpdate.bind(this);
+    this.handleInputBlur = this.handleInputBlur.bind(this);
+    this.handleInputKeyPress = this.handleInputKeyPress.bind(this);
   }
 
   componentDidMount() {
@@ -28,9 +28,8 @@ export default class extends Component {
     }
   }
 
-  updateTitle() {
-    const newTitle = this.form.input.value;
-    if(newTitle !== this.form.inputInitialValue) {
+  updateTitle(newTitle) {
+    if(newTitle !== this.initialTitleValue) {
       this.setState({title: newTitle});
 
       updateMemo({store: this.context.store, memo: {id: this.props.memo.id, title: newTitle}})
@@ -50,32 +49,43 @@ export default class extends Component {
   }
 
   startEditing(input)  {
+    this.initialTitleValue = input.value;
+    input.focus();
+  }
+
+  endEditing(input) {
+    this.setState({editing: false});
+    this.updateTitle(input.value);
+  }
+
+  handleInputRefUpdate(input) {
     if(input) {
-      this.form.input = input;
-      this.form.inputInitialValue = input.value;
-      input.focus();
+      this.startEditing(input)
     }
   }
 
-  endEditing() {
-    this.setState({editing: false});
-    this.updateTitle();
+  handleInputBlur(event) {
+    this.endEditing(event.target);
   }
 
-  handleKeyPress(event) {
+  handleInputKeyPress(event) {
     if (event && event.key === 'Enter' && this.form.input) {
       this.form.input.blur();
     }
   }
 
+  handleTitleLabelClick() {
+    this.toggleEditingMode();
+  }
+
   render() {
     return (this.state.editing) ?
       (<MemoTitleInput title={this.state.title}
-                      startEditing={this.startEditing}
-                      endEditing={this.endEditing}
-                      handleKeyPress={this.handleKeyPress} />) :
+                       onRefUpdate={this.handleInputRefUpdate}
+                       onBlur={this.handleInputBlur}
+                       onKeyPress={this.handleInputKeyPress} />) :
       (<MemoTitleLabel title={this.state.title}
-                      toggleEditingMode={this.toggleEditingMode} />);
+                       onClick={this.handleTitleLabelClick} />);
   }
 
   static contextTypes = {

@@ -16,9 +16,9 @@ export default class extends Component {
       editing: false
     };
 
-    this.startEditing = this.startEditing.bind(this);
-    this.endEditing = this.endEditing.bind(this);
-    this.toggleEditingMode = this.toggleEditingMode.bind(this);
+    this.handleInputRefUpdate = this.handleInputRefUpdate.bind(this);
+    this.handleInputBlur = this.handleInputBlur.bind(this);
+    this.handleBodyTextClick = this.handleBodyTextClick.bind(this);
   }
 
   updateBody() {
@@ -42,11 +42,9 @@ export default class extends Component {
   }
 
   startEditing(input) {
-    if(input) {
-      this.form.input = input;
-      this.form.inputInitialValue = input.value;
-      input.focus();
-    }
+    this.form.input = input;
+    this.form.inputInitialValue = input.value;
+    input.focus();
   }
 
   endEditing() {
@@ -54,10 +52,24 @@ export default class extends Component {
     this.updateBody();
   }
 
+  handleInputRefUpdate(input) {
+    if(input) {
+      this.startEditing(input);
+    }
+  }
+
+  handleInputBlur() {
+    this.endEditing();
+  }
+
+  handleBodyTextClick() {
+    this.toggleEditingMode();
+  }
+
   render() {
     return (this.state.editing) ?
-      (<MemoBodyInput body={this.state.body} startEditing={this.startEditing} endEditing={this.endEditing} />):
-      (<MemoBodyText body={this.state.body} toggleEditingMode={this.toggleEditingMode} />);
+      (<MemoBodyInput body={this.state.body} onRefUpdate={this.handleInputRefUpdate} onBlur={this.handleInputBlur} />):
+      (<MemoBodyText body={this.state.body} onClick={this.handleBodyTextClick} />);
   }
 
   static contextTypes = {
