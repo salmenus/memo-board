@@ -14,10 +14,12 @@ it('creates a new observable when instantiated', () => {
     })
   };
 
+  const Observable = mockRxjs.Observable;
   mockRxjs.Observable = mockObservable;
 
   const provider = new NotificationProvider();
   expect(mockObservable.create.mock.calls.length).toBe(1);
+  mockRxjs.Observable = Observable;
 });
 
 it('set throttle time for new observable to 800 milliseconds', () => {
@@ -26,13 +28,15 @@ it('set throttle time for new observable to 800 milliseconds', () => {
     subscribe: jest.fn()
   });
 
+  const Observable = mockRxjs.Observable;
   mockRxjs.Observable = {
     create: jest.fn().mockReturnValue({
       throttleTime: mockThrottleTime
     })
   };
 
- const provider = new NotificationProvider();
+  const provider = new NotificationProvider();
   expect(mockThrottleTime.mock.calls.length).toBe(1);
   expect(mockThrottleTime.mock.calls[0][0]).toBe(800);
+  mockRxjs.Observable = Observable;
 });
