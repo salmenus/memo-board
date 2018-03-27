@@ -5,8 +5,8 @@ import NotificationMessage from './NotificationMessage';
 
 class Notifications extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       notifications: new Set()
     };

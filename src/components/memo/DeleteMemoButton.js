@@ -6,8 +6,8 @@ import PropTypes from 'prop-types';
 
 class DeleteMemoButton extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {isDeletingMemo: false};
     this.handleClick = this.handleClick.bind(this);
   }

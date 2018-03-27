@@ -4,8 +4,8 @@ import './MemosSortOptions.css';
 
 class MemosSortOptions extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.handleSortOptionUpdated = this.handleSortOptionUpdated.bind(this);
   }
 

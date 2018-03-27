@@ -11,8 +11,8 @@ import PropTypes from 'prop-types';
 
 class Memos extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {sortKey: 'date', memosLoadingState: 'loading'};
     this.handleSortKeyUpdated = this.handleSortKeyUpdated.bind(this);
   }

@@ -5,8 +5,8 @@ import MemoBody from './MemoBody';
 
 class Memo extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       updating: false
     };

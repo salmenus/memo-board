@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 
 class NotificationProvider extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.callbacks = new Set();
     this.initializeObservable();
 
