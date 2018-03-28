@@ -20,12 +20,12 @@ class NotificationProvider extends Component {
     this.observable = Observable.create((observer) => {
       this.observer = observer;
     })
-      // Throttle to a maximum of 1 new notification every 2 seconds
-      // to avoid intrusive notifications and ensure better UX
+      // Throttle to a maximum of 1 new notification every 800 milliseconds
+      // to avoid intrusive notifications and ensure better UX.
       .throttleTime(this.constructor.notificationsThrottlingDurationInMilliseconds)
-      .subscribe(ntofication => {
+      .subscribe(notofication => {
         for(const callback of this.callbacks) {
-          callback(ntofication);
+          callback(notofication);
         }
       });
   }
