@@ -22,6 +22,15 @@ class Memo extends Component {
     this.setState({updating: false});
   };
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return (
+      nextProps.memo.id !== this.props.memo.id ||
+      nextProps.memo.title !== this.props.memo.title ||
+      nextProps.memo.body !== this.props.memo.body ||
+      nextProps.toggleEditingMode !== this.props.toggleEditingMode ||
+      nextState.updating !== this.state.updating);
+  }
+
   render() {
     return (
       <div className={`memo` + ((this.state.updating) ? ' updating' : '')}>
