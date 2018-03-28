@@ -22,13 +22,7 @@ export default (memos = null, action) => {
       let result = Array.isArray(action.memos) ? [...action.memos] : [];
       return result
         .filter(memo => memo.id && memo.creationDate instanceof Date)
-        .map(memo => {
-          if(memo.mostRecent !== false && memo.mostRecent !== true) {
-            return {...memo, mostRecent: false};
-          }
-
-          return memo;
-        });
+        .map(memo => ({...memo, mostRecent: false}));
     }
 
     case 'DELETE_MEMO': {

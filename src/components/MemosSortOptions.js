@@ -15,6 +15,10 @@ class MemosSortOptions extends Component {
     }
   }
 
+  shouldComponentUpdate() {
+    return false;
+  }
+
   render() {
     return (<div className={'memos-sort-options'}>
       <span className={'sort-by-label'}>{ t('sort memos by') }</span>
