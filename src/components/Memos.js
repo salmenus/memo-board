@@ -60,7 +60,7 @@ class Memos extends Component {
       return <ErrorIcon />;
     }
 
-    if(!Array.isArray(this.props.memos)) {
+    if(this.props.isFetching) {
       return <LoadingSpinner />;
     }
 
@@ -79,7 +79,8 @@ class Memos extends Component {
 }
 
 const mapStateToProps = state => ({
-  memos: state.memos
+  isFetching: state.memos.isFetching,
+  memos: state.memos.items
 });
 
 export default connect(mapStateToProps, null)(Memos);
