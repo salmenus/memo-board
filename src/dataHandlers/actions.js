@@ -1,20 +1,9 @@
+import { createAction } from 'redux-actions';
 
-export const addMemo = (newMemo) => ({
-  type: 'ADD_MEMO',
-  memo: {...newMemo}
-});
+export const addMemo = createAction('ADD_MEMO');
 
-export const deleteMemo = (id) => ({
-  type: 'DELETE_MEMO',
-  id: id
-});
+export const deleteMemo = createAction('DELETE_MEMO');
 
-export const updateMemo = (newMemo) => ({
-  type: 'UPDATE_MEMO',
-  memo: newMemo
-});
+export const updateMemo = createAction('UPDATE_MEMO');
 
-export const updateMemos = (memos) => ({
-  type: 'UPDATE_MEMOS',
-  memos
-});
+export const updateMemos = createAction('UPDATE_MEMOS');

@@ -1,47 +1,54 @@
-export default (memos = {isFetching: true, items: []}, action) => {
+import { handleActions } from 'redux-actions';
+import { addMemo, updateMemo, updateMemos, deleteMemo } from "../dataHandlers/actions";
 
-  switch (action.type) {
-
-    case 'ADD_MEMO': {
-      const newMemo = {title: '', body: '', mostRecent: true, ...action.memo};
-      return {
-        isFetching: memos.isFetching,
-        items: [newMemo, ...memos.items.map(memo => ({...memo, mostRecent: false}))]
-      };
-    }
-
-    case 'UPDATE_MEMO': {
-      const updatedMemo = action.memo;
-      return {
-        isFetching: memos.isFetching,
-        items: memos.items.map(memo => {
-          if(memo.id !== updatedMemo.id) {
-            return memo;
-          } else {
-            return {...memo, ...updatedMemo};
-          }
-        })
-      };
-    }
-
-    case 'UPDATE_MEMOS': {
-      let result = Array.isArray(action.memos) ? [...action.memos] : [];
-      return {
-        isFetching: false,
-        items: result.filter(memo => memo.id && memo.creationDate instanceof Date)
-          .map(memo => ({...memo, mostRecent: false}))
-      };
-    }
-
-    case 'DELETE_MEMO': {
-      return {
-        isFetching: memos.isFetching,
-        items: memos.items.filter(memo => memo.id !== action.id)
-      };
-    }
-
-    default: {
-      return memos;
-    }
-  }
+export const addMemoHandler = (state, action) => {
+  const newMemo = {title: '', body: '', mostRecent: true, ...action.payload};
+  return {
+    isFetching: state.isFetching,
+    items: [newMemo, ...state.items.map(memo => ({...memo, mostRecent: false}))]
+  };
 };
+
+export const updateMemoHandler = (state, action) => {
+  const updatedMemo = action.payload;
+  return {
+    isFetching: state.isFetching,
+    items: state.items.map(memo => {
+      if(memo.id !== updatedMemo.id) {
+        return memo;
+      } else {
+        return {...memo, ...updatedMemo};
+      }
+    })
+  };
+};
+
+export const updateMemosHandler = (state, action) => {
+  let result = Array.isArray(action.payload) ? [...action.payload] : [];
+  return {
+    isFetching: false,
+    items: result.filter(memo => memo.id && memo.creationDate instanceof Date)
+      .map(memo => ({...memo, mostRecent: false}))
+  };
+};
+
+export const deleteMemoHandler = (state, action) => {
+  return {
+    isFetching: state.isFetching,
+    items: state.items.filter(memo => memo.id !== action.payload)
+  };
+};
+
+const createReducer = handleActions({
+
+  [addMemo]: addMemoHandler,
+
+  [updateMemo]: updateMemoHandler,
+
+  [updateMemos]: updateMemosHandler,
+
+  [deleteMemo]: deleteMemoHandler
+
+}, {isFetching: true, items: []});
+
+export default createReducer;

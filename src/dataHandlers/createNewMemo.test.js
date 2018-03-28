@@ -63,7 +63,7 @@ it('should dispatch ADD_MEMO action to update store', async () => {
 
   expect(mockStore.dispatch).toHaveBeenCalledWith({
     type: 'ADD_MEMO',
-    memo: {
+    payload: {
       id: 1111,
       creationDate: new Date('2040-12-17T03:24:00')
     }

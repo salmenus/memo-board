@@ -1,9 +1,11 @@
-import memoReducer from './memos';
+import memoReducer, { addMemoHandler, updateMemoHandler, updateMemosHandler, deleteMemoHandler } from './memos';
+import { addMemo, updateMemo, updateMemos } from "../dataHandlers/actions";
+
 
 it('returns default state when it receives invalid action', () => {
   const defaultState = {STATE: 'DEFAULT'};
   const invalidAction = {type: 'INVALID', payload: null};
-  const result = memoReducer(defaultState, invalidAction)
+  const result = memoReducer(defaultState, invalidAction);
   expect(result).toBe(defaultState);
 });
 
@@ -16,17 +18,18 @@ it('adds new memo to state and updates most recent attribute when it receives a 
       ]
   };
 
-  const newMemo = {id: 100, title: 'My memos!', body: 'Let us do 100% test coverage!', creationDate: new Date()};
+  const creationDate = new Date();
+  const newMemo = {id: 100, title: 'My memos!', body: 'Let us do 100% test coverage!', creationDate};
 
   const newState = {
     isFetching: false,
     items: [
-      {id: 100, title: 'My memos!', body: 'Let us do 100% test coverage!', creationDate: new Date(), mostRecent: true},
+      {id: 100, title: 'My memos!', body: 'Let us do 100% test coverage!', creationDate, mostRecent: true},
       {id: 'default id', title: 'default title', body: 'default body', creationDate: null, mostRecent: false}
     ]
   };
 
-  const result = memoReducer(initialState, {type: 'ADD_MEMO', memo: newMemo});
+  const result = memoReducer(initialState, {type: addMemo, memo: newMemo});
   expect(result).toEqual(newState);
 });
 
@@ -49,7 +52,7 @@ it('updates memos state when it receives a valid UPDATE_MEMO action', () => {
     ]
   };
 
-  const result = memoReducer(defaultState, {type: 'UPDATE_MEMO', memo: updatedMemo});
+  const result = memoReducer(defaultState, {type: updateMemo, memo: updatedMemo});
   expect(result).toEqual(newState);
 });
 
@@ -60,12 +63,13 @@ it('updates memos state when it receives a valid UPDATE_MEMOS action', () => {
     items: [{id: 100, title: 'default title', body: 'default body', creationDate: null}]
   };
 
-  const newMemos = [{id: 100, title: 'My memos!', body: 'Let us do 100% test coverage!', creationDate: new Date()}];
+  const creationDate = new Date();
+  const newMemos = [{id: 100, title: 'My memos!', body: 'Let us do 100% test coverage!', creationDate}];
   const updatedMemos = {
     isFetching: false,
-    items: [{id: 100, title: 'My memos!', mostRecent: false, body: 'Let us do 100% test coverage!', creationDate: new Date()}]
+    items: [{id: 100, title: 'My memos!', mostRecent: false, body: 'Let us do 100% test coverage!', creationDate}]
   };
 
-  const result = memoReducer(defaultState, {type: 'UPDATE_MEMOS', memos: newMemos});
+  const result = memoReducer(defaultState, {type: updateMemos, payload: newMemos});
   expect(result).toEqual(updatedMemos);
 });

@@ -105,7 +105,7 @@ it('should dispatch UPDATE_MEMOS action to update store', async () => {
   await loadMemos({firebase: mockFirebase, store: mockStore});
   expect(mockStore.dispatch).toHaveBeenCalledWith({
     type: 'UPDATE_MEMOS',
-    memos: [{
+    payload: [{
       id: 1000,
       title: 'mock title',
       body: 'mock body',

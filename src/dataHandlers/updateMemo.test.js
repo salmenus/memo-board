@@ -52,7 +52,7 @@ it('should dispatch UPDATE_MEMO action to update store', async () => {
 
   expect(mockStore.dispatch).toHaveBeenCalledWith({
     type: 'UPDATE_MEMO',
-    memo:{
+    payload:{
       title: 'new title',
       body: 'new body'
     }

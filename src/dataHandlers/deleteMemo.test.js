@@ -21,7 +21,7 @@ it('should call REST API to delete a memo', async () => {
   expect(deleteMock).toHaveBeenCalled();
 });
 
-it('should dispatch ADD_MEMO action to update store', async () => {
+it('should dispatch DELETE_MEMO action to update store', async () => {
 
   const deleteMock = jest.fn();
   const mockFirebase = {
