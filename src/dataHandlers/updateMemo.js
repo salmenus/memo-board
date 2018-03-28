@@ -1,5 +1,6 @@
 import Firebase from '@firebase/app';
 import '@firebase/firestore';
+import { updateMemo } from './actions';
 
 export default async ({firebase = Firebase, store = null, memo}) => {
 
@@ -19,10 +20,7 @@ export default async ({firebase = Firebase, store = null, memo}) => {
 
   const newMemo = {...memo};
 
-  store.dispatch({
-    type: 'UPDATE_MEMO',
-    memo: newMemo
-  });
+  store.dispatch(updateMemo(newMemo));
 
   return newMemo;
 };

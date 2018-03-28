@@ -1,5 +1,6 @@
 import Firebase from '@firebase/app';
 import '@firebase/firestore';
+import { addMemo } from './actions';
 
 export default async ({firebase = Firebase, store = null}) => {
 
@@ -14,10 +15,7 @@ export default async ({firebase = Firebase, store = null}) => {
     creationDate: memo.data().creation_date
   };
 
-  store.dispatch({
-    type: 'ADD_MEMO',
-    memo: {...newMemo}
-  });
+  store.dispatch(addMemo(newMemo));
 
   return newMemo;
 };

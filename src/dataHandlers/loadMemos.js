@@ -1,5 +1,6 @@
 import Firebase from '@firebase/app';
 import '@firebase/firestore';
+import { updateMemos } from './actions';
 
 export default async ({firebase = Firebase, store = null}) => {
 
@@ -17,10 +18,7 @@ export default async ({firebase = Firebase, store = null}) => {
     };
   });
 
-  store.dispatch({
-    type: 'UPDATE_MEMOS',
-    memos
-  });
+  store.dispatch(updateMemos(memos));
 
   return memos;
 };
