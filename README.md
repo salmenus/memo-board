@@ -1,11 +1,25 @@
 # The Memo Board
 
-A mini project developed for BCG-DV as part of a Front End Developer interview challenge.
+A responsive mini memo board developed using ReactJS, Redux, and Firebase.
 
 Live demo URL:
-<https://bcgdv-memo-board.firebaseapp.com>
+<https://memo-board-b97e1.firebaseapp.com>
 
 ## Install and run locally
+
+#### Firebase Config
+
+Start by updating `.env` to enter your firebase config. You can also create a `.env.local` config file that will override the default configuration, and that will not be committed in Git.
+
+Please visit <https://firebase.google.com> to create a free account and a project. 
+
+The following Firebase services need to be activated:
+
+* Database/Firestore
+* Hosting
+
+
+#### Local Server
 
 ```
 npm install
@@ -15,7 +29,7 @@ npm start
 Then open this URL in the browser to start the app:
 <http://localhost:3000>
 
-#### Run Unit Tests
+#### Running Unit Tests
 
 ```
 npm run build-css
