@@ -60,5 +60,4 @@ npm test
 #### Notes
 
 * This project was developed on `Windows 10` using `Node JS v8.9.4`.
-* Manual QA was done using `Chrome v65` and `Firefox v59` on `Windows`.
-* An issue was noticed when testing on `Microsoft Edge v41.16` (data doesn't load). The problem is due to a bug in the Firebase SDK and it's currently being fixed. Further details in this link: <https://github.com/firebase/firebase-js-sdk/issues/461>.
+* Manual QA was done using `Chrome 65` and `Firefox 59` on `Windows 10`.

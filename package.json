@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@firebase/app": "^0.1.10",
-    "@firebase/firestore": "^0.3.6",
+    "@firebase/firestore": "^0.3.7",
     "i18next": "^10.6.0",
     "node-sass-chokidar": "^1.2.0",
     "npm-run-all": "^4.1.2",
