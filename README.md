@@ -1,6 +1,6 @@
-# The Memo Board
+# React Memo Board
 
-A responsive mini memo board developed using ReactJS, Redux, and Firebase.
+A responsive mini memo board developed using React JS, Redux, and Firebase.
 
 Live demo URL:
 <https://memo-board-b97e1.firebaseapp.com>
@@ -11,9 +11,9 @@ Live demo URL:
 
 Start by updating `.env` to enter your firebase config. You can also create a `.env.local` config file that will override the default configuration, and that will not be committed in Git.
 
-Please visit <https://firebase.google.com> to create a free account and a project. 
+Visit <https://firebase.google.com> to create a free account and a project. 
 
-The following Firebase services need to be activated:
+The following Firebase services need to be enabled:
 
 * Database/Firestore
 * Hosting
@@ -57,16 +57,8 @@ npm test
 * **Firestore SDK** for data persistence.
 * **Jest** and **Enzyme** for unit tests.
 
-#### Development notes
+#### Notes
 
-* This project was developed on `Windows` using `Node JS v8.9.4`.
+* This project was developed on `Windows 10` using `Node JS v8.9.4`.
 * Manual QA was done using `Chrome v65` and `Firefox v59` on `Windows`.
 * An issue was noticed when testing on `Microsoft Edge v41.16` (data doesn't load). The problem is due to a bug in the Firebase SDK and it's currently being fixed. Further details in this link: <https://github.com/firebase/firebase-js-sdk/issues/461>.
-
-## About The Author
-
-This project was developed by Salmen Hichri.
-
-* Email: `salmen.hichri@gmail.com`.
-* GitHub profile: <https://github.com/salmenus>.
-* LinkedIn profile: <https://www.linkedin.com/in/hichri>.
