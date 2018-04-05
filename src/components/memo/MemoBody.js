@@ -72,6 +72,13 @@ class MemoBody extends Component {
       (<MemoBodyText body={this.state.body} onClick={this.handleBodyTextClick} />);
   }
 
+  static propTypes = {
+    memo: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      body: PropTypes.string.isRequired
+    }).isRequired
+  };
+
   static contextTypes = {
     store: PropTypes.object.isRequired,
     notifier: PropTypes.object.isRequired

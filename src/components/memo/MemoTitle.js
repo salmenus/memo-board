@@ -87,6 +87,14 @@ class MemoTitle extends Component {
                        onClick={this.handleTitleLabelClick} />);
   }
 
+  static propTypes = {
+    memo: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired
+    }).isRequired,
+    toggleEditingMode: PropTypes.bool
+  };
+
   static contextTypes = {
     store: PropTypes.object.isRequired,
     notifier: PropTypes.object.isRequired

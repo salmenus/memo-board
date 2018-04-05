@@ -72,6 +72,16 @@ class Memos extends Component {
       </div>);
   }
 
+  static propTypes = {
+    isFetching: PropTypes.bool,
+    memos: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      body: PropTypes.string.isRequired,
+      mostRecent: PropTypes.bool.isRequired
+    }))
+  };
+
   static contextTypes = {
     store: PropTypes.object.isRequired,
     notifier: PropTypes.object.isRequired

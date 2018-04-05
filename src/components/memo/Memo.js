@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Memo.css';
 import MemoBar from './MemoBar';
 import MemoBody from './MemoBody';
+import PropTypes from 'prop-types';
 
 class Memo extends Component {
 
@@ -42,6 +43,16 @@ class Memo extends Component {
       </div>
     );
   }
+
+  static propTypes = {
+    memo: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      body: PropTypes.string.isRequired,
+      mostRecent: PropTypes.bool.isRequired
+    }).isRequired,
+    toggleEditingMode: PropTypes.bool
+  };
 }
 
 export default Memo;
