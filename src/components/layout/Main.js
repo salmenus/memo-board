@@ -1,9 +1,9 @@
 import React from 'react';
 import Memos from '../Memos';
-import './Main.css';
+import styles from './Main.css';
 
 const Main = () => (
-  <main className={'main'}>
+  <main className={styles['main']}>
     <Memos />
   </main>
 );

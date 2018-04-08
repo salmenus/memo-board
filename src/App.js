@@ -3,10 +3,10 @@ import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Main from './components/layout/Main';
 import Notifications from './components/layout/Notifications';
-import './App.css';
+import styles from './App.css';
 
 const App = () => (
-  <div className={'app'}>
+  <div className={styles['app']}>
     <Notifications />
     <Header />
     <Main />

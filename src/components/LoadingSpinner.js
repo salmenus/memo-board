@@ -1,10 +1,10 @@
 import React from 'react';
-import './LoadingSpinner.css'
+import styles from './LoadingSpinner.css'
 
 const LoadingSpinner = () => (
-  <div className={'loading-spinner'}>
-    <div className={'dot-1'} />
-    <div className={'dot-2'} />
+  <div className={styles['loading-spinner']}>
+    <div className={styles['dot-1']} />
+    <div className={styles['dot-2']} />
   </div>
 );
 

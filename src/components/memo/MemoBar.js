@@ -1,10 +1,10 @@
 import React from 'react';
-import './MemoBar.css';
+import styles from './MemoBar.css';
 import MemoTitle from './MemoTitle';
 import DeleteMemoButton from './DeleteMemoButton';
 
 const MemoBar = (props) => (
-  <div className={'memo-bar'}>
+  <div className={styles['memo-bar']}>
     <MemoTitle
       memo={props.memo}
       toggleEditingMode={props.toggleEditingMode} />

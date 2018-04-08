@@ -1,9 +1,10 @@
 import React from 'react';
-import './MemoTitleInput.css';
+import memoTitleStyles from './MemoTitle.css';
+import memoTitleInputStyles from './MemoTitleInput.css';
 
 const MemoTitleInput = (props) => (
-  <div className={'memo-title editing'}>
-    <input className={'memo-title-input'}
+  <div className={['memo-title','editing'].map(className => memoTitleStyles[className]).join(' ')}>
+    <input className={memoTitleInputStyles['memo-title-input']}
            defaultValue={props.title}
            ref={props.onRefUpdate}
            onBlur={props.onBlur}

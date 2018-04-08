@@ -1,6 +1,6 @@
 import React from 'react';
-import './ErrorIcon.css';
+import styles from './ErrorIcon.css';
 
-const ErrorIcon = () => (<div className={'error-icon'}><span className={'icon'} /></div>);
+const ErrorIcon = () => (<div className={styles['error-icon']}><span className={styles['icon']} /></div>);
 
 export default ErrorIcon;

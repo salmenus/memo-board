@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './MemoBody.css'
 import updateMemo from '../../dataHandlers/updateMemo';
 import PropTypes from 'prop-types';
 import MemoBodyText from './MemoBodyText';

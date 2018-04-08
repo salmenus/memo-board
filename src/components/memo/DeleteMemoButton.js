@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { t } from 'i18next';
-import './DeleteMemoButton.css';
+import styles from './DeleteMemoButton.css';
 import deleteMemo from '../../dataHandlers/deleteMemo';
 import PropTypes from 'prop-types';
 
@@ -41,7 +41,7 @@ class DeleteMemoButton extends Component {
   render() {
     return (
       <button
-        className={'memo-delete-button'}
+        className={styles['memo-delete-button']}
         title={t('delete memo')}
         disabled={this.state.isDeletingMemo}
         onClick={this.handleClick}

@@ -4,7 +4,6 @@ import updateMemo from '../../dataHandlers/updateMemo';
 import PropTypes from 'prop-types';
 import MemoTitleLabel from './MemoTitleLabel';
 import MemoTitleInput from './MemoTitleInput';
-import './MemoTitle.css';
 
 class MemoTitle extends Component {
 

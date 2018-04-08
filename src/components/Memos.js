@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { t } from 'i18next';
 import Memo from './memo/Memo';
-import './Memos.css';
+import styles from './Memos.css';
 import LoadingSpinner from './LoadingSpinner';
 import ErrorIcon from './ErrorIcon';
 import MemosSortOptions from './MemosSortOptions';
@@ -66,9 +66,9 @@ class Memos extends Component {
 
     const memoTags = this.getMemoTags();
     return (
-      <div className={'memos-container'}>
+      <div className={styles['memos-container']}>
         <MemosSortOptions onSortKeyUpdated={this.handleSortKeyUpdated} />
-        <div className={'memos'}>{memoTags}</div>
+        <div className={styles['memos']}>{memoTags}</div>
       </div>);
   }
 

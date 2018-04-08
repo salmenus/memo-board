@@ -1,8 +1,13 @@
 import React from 'react';
-import './NotificationMessage.css';
+import styles from './NotificationMessage.css';
 
 const NotificationMessage = (props) => (
-  <div className={`notification-message message-type-${props.type}`}>
+  <div className={
+    [
+      styles['notification-message'],
+      styles[`message-type-${props.type}`]
+    ].join(' ')
+  }>
     <p>{props.message}</p>
   </div>
 );

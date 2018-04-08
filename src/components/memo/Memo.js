@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Memo.css';
+import styles from './Memo.css';
 import MemoBar from './MemoBar';
 import MemoBody from './MemoBody';
 import PropTypes from 'prop-types';
@@ -34,7 +34,7 @@ class Memo extends Component {
 
   render() {
     return (
-      <div className={`memo` + ((this.state.updating) ? ' updating' : '')}>
+      <div className={['memo', ((this.state.updating) ? 'updating' : '')].map(className => styles[className]).join(' ')}>
         <MemoBar memo={this.props.memo}
                  toggleEditingMode={this.props.toggleEditingMode}
                  onUpdateStart={this.onUpdateStart}
