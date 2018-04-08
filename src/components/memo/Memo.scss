@@ -14,18 +14,18 @@
     opacity: $memo-tile-editing-opacity;
   }
 
-  .memo-delete-button {
+  button {
     display: none;
   }
 
-  &:hover .memo-delete-button {
+  &:hover button {
     display: inherit;
   }
 }
 
 @media (hover: none), (-moz-touch-enabled) {
   .memo {
-    .memo-delete-button {
+    button {
       display: inherit;
     }
   }
