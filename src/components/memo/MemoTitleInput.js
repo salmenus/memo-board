@@ -1,10 +1,13 @@
 import React from 'react';
+import CSSModules from 'react-css-modules';
 import memoTitleStyles from './MemoTitle.css';
 import memoTitleInputStyles from './MemoTitleInput.css';
 
+const styles = {...memoTitleStyles, ...memoTitleInputStyles};
+
 const MemoTitleInput = (props) => (
-  <div className={['memo-title','editing'].map(className => memoTitleStyles[className]).join(' ')}>
-    <input className={memoTitleInputStyles['memo-title-input']}
+  <div styleName={['memo-title','editing'].join(' ')}>
+    <input styleName={'memo-title-input'}
            defaultValue={props.title}
            ref={props.onRefUpdate}
            onBlur={props.onBlur}
@@ -14,4 +17,4 @@ const MemoTitleInput = (props) => (
   </div>
 );
 
-export default MemoTitleInput;
+export default CSSModules(MemoTitleInput, styles, {allowMultiple: true});

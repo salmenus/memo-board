@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Notification.css';
+import CSSModules from 'react-css-modules';
 import NotificationMessage from './NotificationMessage';
 
 class Notifications extends Component {
@@ -65,7 +66,7 @@ class Notifications extends Component {
 
   render() {
     const notifications = this.getNotificationsToDisplay();
-    return <div className={styles['notifications']}>{notifications}</div>;
+    return <div styleName={'notifications'}>{notifications}</div>;
   }
 
   static contextTypes = {
@@ -73,4 +74,4 @@ class Notifications extends Component {
   };
 }
 
-export default Notifications;
+export default CSSModules(Notifications, styles);

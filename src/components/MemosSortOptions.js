@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { t } from 'i18next';
+import CSSModules from 'react-css-modules';
 import styles from './MemosSortOptions.css';
 
 class MemosSortOptions extends Component {
@@ -20,9 +21,9 @@ class MemosSortOptions extends Component {
   }
 
   render() {
-    return (<div className={styles['memos-sort-options']}>
-      <span className={styles['sort-by-label']}>{ t('sort memos by') }</span>
-      <select className={styles['sort-options']} tabIndex={0} onChange={this.handleSortOptionUpdated}>
+    return (<div styleName={'memos-sort-options'}>
+      <span styleName={'sort-by-label'}>{ t('sort memos by') }</span>
+      <select styleName={'sort-options'} tabIndex={0} onChange={this.handleSortOptionUpdated}>
         <option value='date'>{ t('sort by - date') }</option>
         <option value='title'>{ t('sort by - title') }</option>
       </select>
@@ -30,4 +31,4 @@ class MemosSortOptions extends Component {
   }
 }
 
-export default MemosSortOptions;
+export default CSSModules(MemosSortOptions, styles);

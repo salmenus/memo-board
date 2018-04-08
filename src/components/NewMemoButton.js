@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { t } from 'i18next';
+import CSSModules from 'react-css-modules';
 import styles from './NewMemoButton.css'
 import createNewMemo from '../dataHandlers/createNewMemo';
 
@@ -29,7 +30,7 @@ class NewMemoButton extends Component {
 
   render() {
     return (<button
-      className={styles['new-memo-button']}
+      styleName={'new-memo-button'}
       onClick={this.handleClick}
       disabled={this.state.isCreatingNewMemo}>{ t('create new memo') }</button>);
   }
@@ -40,4 +41,4 @@ class NewMemoButton extends Component {
   };
 }
 
-export default NewMemoButton;
+export default CSSModules(NewMemoButton, styles);

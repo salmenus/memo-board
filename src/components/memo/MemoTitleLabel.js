@@ -1,15 +1,18 @@
 import React from 'react';
+import CSSModules from 'react-css-modules';
 import memoTitleStyles from './MemoTitle.css';
 import memoTitleTextStyles from './MemoTitleLabel.css';
 
+const styles = {...memoTitleStyles, ...memoTitleTextStyles};
+
 const MemoTitleLabel = (props) => (
   <div
-    className={memoTitleStyles['memo-title']}
+    styleName={'memo-title'}
     tabIndex={0}
     onFocus={props.onClick}
     onClick={props.onClick}>
-    <span className={memoTitleTextStyles['memo-title-text']} title={props.title}>{props.title}</span>
+    <span styleName={'memo-title-text'} title={props.title}>{props.title}</span>
   </div>
 );
 
-export default MemoTitleLabel;
+export default CSSModules(MemoTitleLabel, styles);

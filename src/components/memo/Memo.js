@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CSSModules from 'react-css-modules';
 import styles from './Memo.css';
 import MemoBar from './MemoBar';
 import MemoBody from './MemoBody';
@@ -34,7 +35,7 @@ class Memo extends Component {
 
   render() {
     return (
-      <div className={['memo', ((this.state.updating) ? 'updating' : '')].map(className => styles[className]).join(' ')}>
+      <div styleName={['memo', ((this.state.updating) ? 'updating' : '')].join(' ')}>
         <MemoBar memo={this.props.memo}
                  toggleEditingMode={this.props.toggleEditingMode}
                  onUpdateStart={this.onUpdateStart}
@@ -55,4 +56,4 @@ class Memo extends Component {
   };
 }
 
-export default Memo;
+export default CSSModules(Memo, styles, {allowMultiple: true});

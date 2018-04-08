@@ -1,19 +1,20 @@
 import React from 'react';
 import { t } from 'i18next';
+import CSSModules from 'react-css-modules';
 import NewMemoButton from '../NewMemoButton';
 import styles from './Header.css';
 
 const Header = () => {
   return (
-    <header className={styles['header']}>
-      <h1 className={styles['title']}>
-        <span className={styles['logo']} />
+    <header styleName={'header'}>
+      <h1 styleName={'title'}>
+        <span styleName={'logo'} />
         <span>{t('app name')}</span>
         </h1>
-      <div className={styles['actions']}>
+      <div styleName={'actions'}>
         <NewMemoButton />
       </div>
     </header>);
 };
 
-export default Header;
+export default CSSModules(Header, styles);

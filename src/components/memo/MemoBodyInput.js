@@ -1,9 +1,10 @@
 import React from 'react';
+import CSSModules from 'react-css-modules';
 import styles from './MemoBody.css'
 
 const MemoBodyInput = (props) => (
-  <div className={['memo-body','editing'].map(className => styles[className]).join(' ')}>
-      <textarea className={styles['memo-body-input']}
+  <div styleName={['memo-body','editing'].join(' ')}>
+      <textarea styleName={'memo-body-input'}
                 defaultValue={props.body}
                 ref={props.onRefUpdate}
                 onBlur={props.onBlur}
@@ -12,4 +13,4 @@ const MemoBodyInput = (props) => (
   </div>
 );
 
-export default MemoBodyInput;
+export default CSSModules(MemoBodyInput, styles, {allowMultiple: true});

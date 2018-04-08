@@ -2,9 +2,10 @@ import React from 'react';
 import styles from './MemoBar.css';
 import MemoTitle from './MemoTitle';
 import DeleteMemoButton from './DeleteMemoButton';
+import CSSModules from 'react-css-modules';
 
 const MemoBar = (props) => (
-  <div className={styles['memo-bar']}>
+  <div styleName={'memo-bar'}>
     <MemoTitle
       memo={props.memo}
       toggleEditingMode={props.toggleEditingMode} />
@@ -15,4 +16,4 @@ const MemoBar = (props) => (
   </div>
 );
 
-export default MemoBar;
+export default CSSModules(MemoBar, styles);
