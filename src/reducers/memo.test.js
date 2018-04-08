@@ -29,7 +29,7 @@ it('adds new memo to state and updates most recent attribute when it receives a 
     ]
   };
 
-  const result = memoReducer(initialState, {type: addMemo, memo: newMemo});
+  const result = memoReducer(initialState, {type: addMemo, payload: newMemo});
   expect(result).toEqual(newState);
 });
 
@@ -52,7 +52,7 @@ it('updates memos state when it receives a valid UPDATE_MEMO action', () => {
     ]
   };
 
-  const result = memoReducer(defaultState, {type: updateMemo, memo: updatedMemo});
+  const result = memoReducer(defaultState, {type: updateMemo, payload: updatedMemo});
   expect(result).toEqual(newState);
 });
 
