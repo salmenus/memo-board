@@ -39,7 +39,7 @@ export const deleteMemoHandler = (state, action) => {
   };
 };
 
-const createReducer = handleActions({
+const reducers = handleActions({
 
   [addMemo]: addMemoHandler,
 
@@ -51,4 +51,4 @@ const createReducer = handleActions({
 
 }, {isFetching: true, items: []});
 
-export default createReducer;
+export default reducers;
