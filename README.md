@@ -52,6 +52,7 @@ npm test
 #### Technologies used
 
 * **React JS** and **Redux** for UI and data handling.
+* **Flow** for static type checking.
 * **SASS** for CSS pre-processing.
 * **RxJS** for notifications.
 * **Firestore SDK** for data persistence.
