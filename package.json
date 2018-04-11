@@ -61,11 +61,14 @@
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm-run-all build-css build-js",
-    "test": "node scripts/test.js --env=jsdom --no-cache --coverage --collectCoverageFrom=src/**/*.js --collectCoverageFrom=!src/index.js"
+    "test": "node scripts/test.js --env=jsdom --no-cache --coverage --collectCoverageFrom=src/**/*.js --collectCoverageFrom=!src/index.js",
+    "flow": "flow"
   },
   "devDependencies": {
+    "babel-preset-flow": "^6.23.0",
     "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1"
+    "enzyme-adapter-react-16": "^1.1.1",
+    "flow-bin": "^0.69.0"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -104,6 +107,7 @@
   },
   "babel": {
     "presets": [
+      "flow",
       "react-app"
     ]
   },
