@@ -7,14 +7,13 @@
 .*/flow-typed/.*
 .*/public/.*
 .*/scripts/.*
-
 .*\.test\.js
-\./src/index\.js
+.*/src/index\.js
+.*/src/setupTests\.js
 
 [include]
 
 [libs]
-flow-typed/npm/react-css-modules_vx.x.x.js
 
 [lints]
 
